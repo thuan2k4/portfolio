@@ -1,4 +1,4 @@
-import avatarImage from './assets/me.jpg';
+import avatarImage from './assets/avatar.jpg';
 
 const CONFIG = {
   email: 'qthuan1234@gmail.com',
