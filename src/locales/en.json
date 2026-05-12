@@ -1,0 +1,125 @@
+{
+  "hero": {
+    "intro": "Hi, my name is",
+    "title": "Dao Quang Thuan",
+    "subtitle": "Building reliable web platforms and AI-powered systems.",
+    "description": "I am a Software Engineer focused on backend architecture, asynchronous systems, and practical AI integration. I enjoy turning ambiguous product ideas into stable, observable, and maintainable software.",
+    "cta": "Check out my work"
+  },
+  "about": {
+    "title": "About Me",
+    "para1": "My journey started with AI research and competitive programming training, where I built a strong habit of reasoning from data, constraints, and edge cases. As I moved deeper into Software Engineering, I learned to use AI-assisted workflows for speed while still keeping production quality, architecture, and maintainability at the center.",
+    "para2": "I am strongest when working on systems that need clear boundaries, resilient asynchronous processing, and careful trade-off decisions. I care about shipping quickly, but I care even more about building software that can be understood, operated, and improved after the first release.",
+    "skills_intro": "Here are a few technologies and practices I have been working with recently:",
+    "skills": [
+      "FastAPI",
+      "NestJS",
+      "Python/TypeScript",
+      "React/Tailwind CSS",
+      "Celery/Azure Service Bus",
+      "PostgreSQL/TypeORM",
+      "Docker/CI-CD",
+      "LLM/OCR Integration"
+    ]
+  },
+  "experience": {
+    "jobs": [
+      {
+        "company": "Tenomad",
+        "role": "Software Engineer Intern",
+        "range": "April 2025 - Present",
+        "points": [
+          "Moved from OCR research and small maintenance tasks into production backend work with FastAPI, NestJS, queues, and WebSockets.",
+          "Built backend pieces for long-running AI/OCR tasks: background processing, retry behavior, real-time progress updates, and multi-layer debugging.",
+          "Contributed to an AI/audio MVP from technical planning through API delivery and feedback handling after client testing."
+        ]
+      },
+      {
+        "company": "Hue University of Science",
+        "role": "Computer Science Student / Teaching Assistant",
+        "range": "2022 - Present",
+        "points": [
+          "Trained with the OLP/ICPC programming team, strengthening algorithmic thinking, problem decomposition, and debugging under time pressure.",
+          "Received the 'Excellent Research Project' recognition in the first faculty-level student research report.",
+          "Served as a teaching assistant for 'Introduction to Programming' and 'Programming Techniques' across four semesters."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Selected Work",
+    "featured_label": "Featured Case Study",
+    "featured": [
+      {
+        "name": "Enterprise OCR & AI Processing System (NDA)",
+        "tech": ["FastAPI", "NestJS", "Celery", "Azure Service Bus", "WebSockets"],
+        "visual_steps": ["FE Upload/Progress", "NestJS Backend", "Queue/Worker", "OCR Service", "Realtime Result"],
+        "desc": [
+          "Implemented an asynchronous OCR pipeline so files are processed by background workers without blocking API responses.",
+          "Refactored OCR provider selection with Factory Pattern, making the code easier to extend when adding or changing providers.",
+          "Fixed a production issue around queue message size limits by sending reference IDs instead of oversized payloads.",
+          "Built retry with exponential backoff and real-time progress through WebSockets so the system recovers better and users can follow processing status."
+        ]
+      },
+      {
+        "name": "AI Music Processing MVP (NDA)",
+        "tech": ["Python", "FastAPI", "Audio Processing", "AI Integration", "API Docs"],
+        "visual_steps": ["Web Demo", "FastAPI Backend", "Audio Validate", "AI Processing", "Mobile API"],
+        "desc": [
+          "Joined technical brainstorming with the CEO and proposed three delivery options: fast MVP, AI-integrated version, and full-featured version.",
+          "Designed API endpoints for audio processing, implemented backend logic, and wrote documentation for mobile integration.",
+          "Debugged post-release issues across audio formats and browsers, including Safari, Chrome, and Brave.",
+          "Proposed a keep-alive direction for server sleep issues and improved validation so the demo became more stable during client testing."
+        ]
+      },
+      {
+        "name": "AI-Centric QR Menu Generator",
+        "tech": ["React", "Tailwind CSS", "VietQR", "Telegram Bot", "CI/CD"],
+        "visual_steps": ["React UI", "Menu Admin", "QR Payment", "Telegram Bot", "Deploy/CI"],
+        "desc": [
+          "Built the QR Menu Generator MVP in two days, working independently with support from AI agents.",
+          "Created a digital menu flow with QR payment and Telegram order notifications for an internal demo scenario.",
+          "Improved data queries, added client-side caching, and refined UI/UX after multiple feedback rounds.",
+          "Deployed the web app for PM review and continued iterating through the build → feedback → improve loop."
+        ]
+      }
+    ],
+    "noteworthy": {
+      "title": "Other Noteworthy Projects",
+      "list": [
+        {
+          "name": "CCCD/Passport Information Extraction",
+          "desc": "Document information extraction mini project: YOLO detects data regions, VietOCR reads text, and a ReactJS + Flask web app presents the result.",
+          "tech": ["Python", "YOLO", "VietOCR", "React", "Flask"]
+        },
+        {
+          "name": "Smart Home Website",
+          "desc": "Web interface for smart home monitoring and device control, focused on responsive UI, state management, and a practical dashboard experience.",
+          "tech": ["React", "IoT Dashboard", "Responsive UI"]
+        },
+        {
+          "name": "E-Commerce Fullstack Engine",
+          "desc": "Self-built MERN Stack project for practicing fullstack workflows: product management, authentication, cart behavior, and end-to-end shopping flow.",
+          "tech": ["MERN Stack", "Redux", "JWT"]
+        }
+      ]
+    }
+  },
+  "contact": {
+    "subheading": "04. What's Next?",
+    "title": "Get In Touch",
+    "description": "I am open to opportunities where backend engineering, AI integration, and product-minded software development meet. If that sounds useful, let's talk.",
+    "cta": "Say Hello"
+  },
+  "footer": {
+    "built_by": "Designed & Built by Dao Quang Thuan",
+    "inspired_by": "Based on Brittany Chiang's v4"
+  },
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "work": "Work",
+    "contact": "Contact",
+    "resume": "Resume"
+  }
+}

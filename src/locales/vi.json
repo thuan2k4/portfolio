@@ -1,0 +1,125 @@
+{
+  "hero": {
+    "intro": "Xin chào, tôi là",
+    "title": "Đào Quang Thuận",
+    "subtitle": "Xây dựng nền tảng web ổn định và hệ thống AI thực tiễn.",
+    "description": "Tôi là Software Engineer tập trung vào kiến trúc backend, hệ thống bất đồng bộ và tích hợp AI vào sản phẩm thật. Tôi thích biến những yêu cầu còn mơ hồ thành phần mềm ổn định, dễ quan sát và dễ bảo trì.",
+    "cta": "Xem các dự án của tôi"
+  },
+  "about": {
+    "title": "Về Tôi",
+    "para1": "Hành trình của tôi bắt đầu từ nghiên cứu AI và quá trình training OLP/ICPC, nơi tôi rèn luyện tư duy giải quyết vấn đề dựa trên dữ liệu, ràng buộc và các trường hợp biên. Khi đi sâu hơn vào Software Engineering, tôi học cách tận dụng AI-assisted workflow để tăng tốc nhưng vẫn giữ trọng tâm ở chất lượng production, kiến trúc và khả năng bảo trì.",
+    "para2": "Tôi phát huy tốt nhất trong những hệ thống cần ranh giới rõ ràng, xử lý bất đồng bộ bền vững và các quyết định trade-off cẩn thận. Tôi quan tâm đến tốc độ ra mắt sản phẩm, nhưng còn quan tâm hơn đến việc xây dựng phần mềm có thể vận hành, hiểu được và cải tiến sau lần release đầu tiên.",
+    "skills_intro": "Dưới đây là một vài công nghệ và hướng thực hành tôi đã làm việc gần đây:",
+    "skills": [
+      "FastAPI",
+      "NestJS",
+      "Python/TypeScript",
+      "React/Tailwind CSS",
+      "Celery/Azure Service Bus",
+      "PostgreSQL/TypeORM",
+      "Docker/CI-CD",
+      "LLM/OCR Integration"
+    ]
+  },
+  "experience": {
+    "jobs": [
+      {
+        "company": "Tenomad",
+        "role": "Software Engineer Intern",
+        "range": "Tháng 4 2025 - Hiện tại",
+        "points": [
+          "Từ research OCR và maintain các task nhỏ, chuyển sang đóng góp trực tiếp trên production codebase với FastAPI, NestJS, queue và WebSocket.",
+          "Xây dựng các phần backend cho tác vụ AI/OCR chạy lâu: xử lý nền, retry khi lỗi tạm thời, cập nhật tiến trình realtime và debug lỗi nhiều layer.",
+          "Tham gia một MVP AI/audio ở giai đoạn định hướng kỹ thuật: đề xuất roadmap theo nhiều mức độ hoàn thiện, build API và xử lý feedback sau khi client test."
+        ]
+      },
+      {
+        "company": "Hue University of Science",
+        "role": "Sinh viên Khoa học Máy tính / Trợ giảng",
+        "range": "2022 - Hiện tại",
+        "points": [
+          "Từng tham gia training đội tuyển OLP/ICPC, rèn luyện tư duy thuật toán, phân rã bài toán và debug dưới áp lực thời gian.",
+          "Đạt giải \"Công trình xuất sắc\" trong báo cáo lần 1 cấp Khoa.",
+          "Từng làm trợ giảng cho 2 học phần \"Nhập môn lập trình\" và \"Kĩ Thuật Lập Trình\" trong 4 kì học."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Dự Án Tiêu Biểu",
+    "featured_label": "Case Study Nổi Bật",
+    "featured": [
+      {
+        "name": "Enterprise OCR & AI Processing System (NDA)",
+        "tech": ["FastAPI", "NestJS", "Celery", "Azure Service Bus", "WebSockets"],
+        "visual_steps": ["FE Upload/Progress", "NestJS Backend", "Queue/Worker", "OCR Service", "Realtime Result"],
+        "desc": [
+          "Triển khai pipeline OCR bất đồng bộ để file được xử lý bởi worker nền, API không bị block khi tác vụ chạy lâu.",
+          "Refactor phần chọn OCR provider theo Factory Pattern, giúp code dễ mở rộng khi cần thêm hoặc thay provider.",
+          "Fix lỗi production liên quan đến giới hạn kích thước message queue bằng cách gửi reference ID thay vì payload lớn.",
+          "Xây dựng retry với exponential backoff và progress realtime qua WebSocket để hệ thống tự phục hồi tốt hơn và người dùng theo dõi được trạng thái xử lý."
+        ]
+      },
+      {
+        "name": "AI Music Processing MVP (NDA)",
+        "tech": ["Python", "FastAPI", "Audio Processing", "AI Integration", "API Docs"],
+        "visual_steps": ["Web Demo", "FastAPI Backend", "Audio Validate", "AI Processing", "Mobile API"],
+        "desc": [
+          "Tham gia brainstorm trực tiếp với CEO và đề xuất 3 hướng triển khai: MVP nhanh, bản có AI integration và bản full-featured.",
+          "Thiết kế API cho luồng xử lý audio, viết tài liệu đủ rõ để mobile developer tích hợp và test.",
+          "Debug sau release với nhiều định dạng audio và trình duyệt khác nhau, bao gồm Safari, Chrome và Brave.",
+          "Đề xuất hướng xử lý server sleep/keep-alive và chỉnh validation để bản demo ổn định hơn khi client test."
+        ]
+      },
+      {
+        "name": "AI-Centric QR Menu Generator",
+        "tech": ["React", "Tailwind CSS", "VietQR", "Telegram Bot", "CI/CD"],
+        "visual_steps": ["React UI", "Menu Admin", "QR Payment", "Telegram Bot", "Deploy/CI"],
+        "desc": [
+          "Build MVP web application QR Menu Generator trong 2 ngày, làm độc lập với sự hỗ trợ của AI agents.",
+          "Tạo luồng menu kỹ thuật số, thanh toán QR và thông báo đơn hàng qua Telegram cho kịch bản demo nội bộ.",
+          "Tối ưu truy vấn dữ liệu, bổ sung client-side caching và hoàn thiện UI/UX sau nhiều vòng feedback.",
+          "Deploy bản web để PM review và tiếp tục chỉnh theo yêu cầu mới trong vòng lặp build → feedback → iterate."
+        ]
+      }
+    ],
+    "noteworthy": {
+      "title": "Các Dự Án Khác",
+      "list": [
+        {
+          "name": "Trích Xuất Thông Tin CCCD/Passport",
+          "desc": "Mini project nhận dạng thông tin giấy tờ: dùng YOLO để phát hiện vùng dữ liệu và VietOCR để đọc text, sau đó hiển thị qua web fullstack ReactJS + Flask.",
+          "tech": ["Python", "YOLO", "VietOCR", "React", "Flask"]
+        },
+        {
+          "name": "Smart Home Website",
+          "desc": "Giao diện web cho theo dõi và điều khiển thiết bị nhà thông minh, tập trung vào responsive UI, quản lý state và trải nghiệm dashboard thực tế.",
+          "tech": ["React", "IoT Dashboard", "Responsive UI"]
+        },
+        {
+          "name": "E-Commerce Fullstack Engine",
+          "desc": "Project tự build bằng MERN Stack để luyện quy trình fullstack: quản lý sản phẩm, xác thực người dùng, giỏ hàng và luồng mua sắm end-to-end.",
+          "tech": ["MERN Stack", "Redux", "JWT"]
+        }
+      ]
+    }
+  },
+  "contact": {
+    "subheading": "04. Tiếp theo là gì?",
+    "title": "Liên Hệ",
+    "description": "Tôi đang mở với các cơ hội giao nhau giữa backend engineering, tích hợp AI và tư duy phát triển sản phẩm. Nếu điều đó phù hợp, hãy cùng trao đổi.",
+    "cta": "Gửi lời chào"
+  },
+  "footer": {
+    "built_by": "Thiết kế & Xây dựng bởi Đào Quang Thuận",
+    "inspired_by": "Dựa trên mẫu v4 của Brittany Chiang"
+  },
+  "nav": {
+    "about": "Giới Thiệu",
+    "experience": "Kinh Nghiệm",
+    "work": "Dự Án",
+    "contact": "Liên Hệ",
+    "resume": "Hồ Sơ"
+  }
+}
