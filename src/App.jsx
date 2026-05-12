@@ -166,7 +166,12 @@ const About = () => {
             viewport={{ once: true }}
           >
             {skills.map(skill => (
-              <motion.li key={skill} variants={itemReveal} className="flex items-center space-x-2">
+              <motion.li
+                key={skill}
+                variants={itemReveal}
+                whileHover={{ y: -2 }}
+                className="flex items-center space-x-2 rounded border border-navy-lightest/70 bg-navy-light/40 px-3 py-2 text-slate-light hover:border-green/50 hover:text-green transition-all"
+              >
                 <ChevronRight size={14} className="text-green shrink-0 mt-1" />
                 <span>{skill}</span>
               </motion.li>
@@ -367,7 +372,21 @@ function App() {
           <p className="font-mono text-green mb-5">{t('contact.subheading')}</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 text-slate-lightest leading-tight">{t('contact.title')}</h2>
           <p className="text-slate mb-12 text-base md:text-lg leading-8">{t('contact.description')}</p>
-          <motion.a whileHover={{ y: -3 }} whileTap={{ scale: 0.97 }} href={`mailto:${CONFIG.email}`} className="btn py-4 px-10 inline-block">{t('contact.cta')}</motion.a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <motion.a whileHover={{ y: -3 }} whileTap={{ scale: 0.97 }} href={`mailto:${CONFIG.email}`} className="btn py-4 px-10 inline-block">{t('contact.cta')}</motion.a>
+            {CONFIG.resumeUrl !== '#' && (
+              <motion.a
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.97 }}
+                href={CONFIG.resumeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn py-4 px-10 inline-block bg-green-tint"
+              >
+                {t('contact.resume_cta')}
+              </motion.a>
+            )}
+          </div>
         </motion.section>
       </main>
       

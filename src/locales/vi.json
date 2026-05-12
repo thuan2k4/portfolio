@@ -29,9 +29,9 @@
         "role": "Software Engineer Intern",
         "range": "Tháng 4 2025 - Hiện tại",
         "points": [
-          "Từ research OCR và maintain các task nhỏ, chuyển sang đóng góp trực tiếp trên production codebase với FastAPI, NestJS, queue và WebSocket.",
-          "Xây dựng các phần backend cho tác vụ AI/OCR chạy lâu: xử lý nền, retry khi lỗi tạm thời, cập nhật tiến trình realtime và debug lỗi nhiều layer.",
-          "Tham gia một MVP AI/audio ở giai đoạn định hướng kỹ thuật: đề xuất roadmap theo nhiều mức độ hoàn thiện, build API và xử lý feedback sau khi client test."
+          "Từ research AI và maintain các task nhỏ, chuyển sang đóng góp trực tiếp trên production codebase với FastAPI, NestJS, queue và WebSocket.",
+          "Xây dựng các phần backend cho tác vụ AI chạy lâu: xử lý nền, retry khi lỗi tạm thời, cập nhật tiến trình realtime và debug lỗi nhiều layer.",
+          "Tham gia một MVP AI ở giai đoạn định hướng kỹ thuật: đề xuất roadmap theo nhiều mức độ hoàn thiện, build API và xử lý feedback sau khi client test."
         ]
       },
       {
@@ -51,24 +51,40 @@
     "featured_label": "Case Study Nổi Bật",
     "featured": [
       {
-        "name": "Enterprise OCR & AI Processing System (NDA)",
+        "name": "Enterprise AI Processing System (NDA)",
         "tech": ["FastAPI", "NestJS", "Celery", "Azure Service Bus", "WebSockets"],
-        "visual_steps": ["FE Upload/Progress", "NestJS Backend", "Queue/Worker", "OCR Service", "Realtime Result"],
+        "visual_steps": ["FE Upload/Progress", "Backend API", "Queue/Worker", "AI Service", "Realtime Result"],
+        "visual_details": [
+          "Thiết kế màn hình gửi tác vụ và hiển thị tiến trình xử lý theo trạng thái.",
+          "Nhận request, kiểm tra dữ liệu đầu vào và tạo job metadata để xử lý nền.",
+          "Đưa job vào queue để worker xử lý bất đồng bộ, tránh block API chính.",
+          "Gọi service AI qua abstraction layer để dễ thay đổi provider khi cần.",
+          "Đẩy trạng thái về frontend qua realtime channel để người dùng theo dõi."
+        ],
+        "metrics": ["4 trạng thái realtime", "Worker xử lý nền", "Retry/backoff"],
         "desc": [
-          "Triển khai pipeline OCR bất đồng bộ để file được xử lý bởi worker nền, API không bị block khi tác vụ chạy lâu.",
-          "Refactor phần chọn OCR provider theo Factory Pattern, giúp code dễ mở rộng khi cần thêm hoặc thay provider.",
+          "Triển khai pipeline xử lý AI bất đồng bộ để tác vụ chạy lâu được xử lý bởi worker nền, API không bị block.",
+          "Refactor phần chọn provider theo Factory Pattern, giúp code dễ mở rộng khi cần thêm hoặc thay provider.",
           "Fix lỗi production liên quan đến giới hạn kích thước message queue bằng cách gửi reference ID thay vì payload lớn.",
           "Xây dựng retry với exponential backoff và progress realtime qua WebSocket để hệ thống tự phục hồi tốt hơn và người dùng theo dõi được trạng thái xử lý."
         ]
       },
       {
-        "name": "AI Music Processing MVP (NDA)",
-        "tech": ["Python", "FastAPI", "Audio Processing", "AI Integration", "API Docs"],
-        "visual_steps": ["Web Demo", "FastAPI Backend", "Audio Validate", "AI Processing", "Mobile API"],
+        "name": "AI Processing MVP (NDA)",
+        "tech": ["Python", "FastAPI", "Data Processing", "AI Integration", "API Docs"],
+        "visual_steps": ["Web Demo", "FastAPI Backend", "Input Validate", "AI Workflow", "Client API"],
+        "visual_details": [
+          "Dựng demo web để stakeholder kiểm thử luồng xử lý mà không cần app đầy đủ.",
+          "Thiết kế endpoint và luồng backend phục vụ tác vụ AI chạy theo request.",
+          "Kiểm tra định dạng, giới hạn và edge case của dữ liệu đầu vào.",
+          "Tổ chức các bước xử lý AI thành workflow có thể debug và tối ưu.",
+          "Viết API contract rõ ràng để client/mobile side tích hợp và test."
+        ],
+        "metrics": ["3 roadmap options", "API cho mobile", "Debug cuối tuần"],
         "desc": [
           "Tham gia brainstorm trực tiếp với CEO và đề xuất 3 hướng triển khai: MVP nhanh, bản có AI integration và bản full-featured.",
-          "Thiết kế API cho luồng xử lý audio, viết tài liệu đủ rõ để mobile developer tích hợp và test.",
-          "Debug sau release với nhiều định dạng audio và trình duyệt khác nhau, bao gồm Safari, Chrome và Brave.",
+          "Thiết kế API cho luồng xử lý dữ liệu, viết tài liệu đủ rõ để phía client/mobile tích hợp và test.",
+          "Debug sau release với nhiều định dạng đầu vào và môi trường trình duyệt khác nhau.",
           "Đề xuất hướng xử lý server sleep/keep-alive và chỉnh validation để bản demo ổn định hơn khi client test."
         ]
       },
@@ -76,6 +92,14 @@
         "name": "AI-Centric QR Menu Generator",
         "tech": ["React", "Tailwind CSS", "VietQR", "Telegram Bot", "CI/CD"],
         "visual_steps": ["React UI", "Menu Admin", "QR Payment", "Telegram Bot", "Deploy/CI"],
+        "visual_details": [
+          "Xây dựng giao diện menu số và các trạng thái người dùng chính bằng React.",
+          "Tạo khu vực quản trị để chỉnh nội dung, cấu hình và luồng hiển thị menu.",
+          "Tích hợp QR payment cho kịch bản thanh toán nhanh trong MVP.",
+          "Tự động gửi thông báo đơn hàng qua Telegram để mô phỏng vận hành thực tế.",
+          "Đóng gói, deploy và lặp lại theo feedback để hoàn thiện demo."
+        ],
+        "metrics": ["MVP trong 2 ngày", "8-10h/ngày", "Feedback loop"],
         "desc": [
           "Build MVP web application QR Menu Generator trong 2 ngày, làm độc lập với sự hỗ trợ của AI agents.",
           "Tạo luồng menu kỹ thuật số, thanh toán QR và thông báo đơn hàng qua Telegram cho kịch bản demo nội bộ.",
@@ -109,7 +133,8 @@
     "subheading": "04. Tiếp theo là gì?",
     "title": "Liên Hệ",
     "description": "Tôi đang mở với các cơ hội giao nhau giữa backend engineering, tích hợp AI và tư duy phát triển sản phẩm. Nếu điều đó phù hợp, hãy cùng trao đổi.",
-    "cta": "Gửi lời chào"
+    "cta": "Gửi lời chào",
+    "resume_cta": "Xem CV"
   },
   "footer": {
     "built_by": "Thiết kế & Xây dựng bởi Đào Quang Thuận",

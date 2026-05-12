@@ -29,9 +29,9 @@
         "role": "Software Engineer Intern",
         "range": "April 2025 - Present",
         "points": [
-          "Moved from OCR research and small maintenance tasks into production backend work with FastAPI, NestJS, queues, and WebSockets.",
-          "Built backend pieces for long-running AI/OCR tasks: background processing, retry behavior, real-time progress updates, and multi-layer debugging.",
-          "Contributed to an AI/audio MVP from technical planning through API delivery and feedback handling after client testing."
+          "Moved from AI research and small maintenance tasks into production backend work with FastAPI, NestJS, queues, and WebSockets.",
+          "Built backend pieces for long-running AI tasks: background processing, retry behavior, real-time progress updates, and multi-layer debugging.",
+          "Contributed to an AI MVP from technical planning through API delivery and feedback handling after client testing."
         ]
       },
       {
@@ -51,24 +51,40 @@
     "featured_label": "Featured Case Study",
     "featured": [
       {
-        "name": "Enterprise OCR & AI Processing System (NDA)",
+        "name": "Enterprise AI Processing System (NDA)",
         "tech": ["FastAPI", "NestJS", "Celery", "Azure Service Bus", "WebSockets"],
-        "visual_steps": ["FE Upload/Progress", "NestJS Backend", "Queue/Worker", "OCR Service", "Realtime Result"],
+        "visual_steps": ["FE Upload/Progress", "Backend API", "Queue/Worker", "AI Service", "Realtime Result"],
+        "visual_details": [
+          "Designed the task submission UI and progress states for long-running work.",
+          "Accepted requests, validated input, and created job metadata for background processing.",
+          "Queued jobs for asynchronous workers so the main API stayed responsive.",
+          "Called AI services through an abstraction layer so providers can change safely.",
+          "Pushed processing status back to the frontend through a realtime channel."
+        ],
+        "metrics": ["4 realtime states", "Background workers", "Retry/backoff"],
         "desc": [
-          "Implemented an asynchronous OCR pipeline so files are processed by background workers without blocking API responses.",
-          "Refactored OCR provider selection with Factory Pattern, making the code easier to extend when adding or changing providers.",
+          "Implemented an asynchronous AI processing pipeline so long-running tasks are handled by background workers without blocking API responses.",
+          "Refactored provider selection with Factory Pattern, making the code easier to extend when adding or changing providers.",
           "Fixed a production issue around queue message size limits by sending reference IDs instead of oversized payloads.",
           "Built retry with exponential backoff and real-time progress through WebSockets so the system recovers better and users can follow processing status."
         ]
       },
       {
-        "name": "AI Music Processing MVP (NDA)",
-        "tech": ["Python", "FastAPI", "Audio Processing", "AI Integration", "API Docs"],
-        "visual_steps": ["Web Demo", "FastAPI Backend", "Audio Validate", "AI Processing", "Mobile API"],
+        "name": "AI Processing MVP (NDA)",
+        "tech": ["Python", "FastAPI", "Data Processing", "AI Integration", "API Docs"],
+        "visual_steps": ["Web Demo", "FastAPI Backend", "Input Validate", "AI Workflow", "Client API"],
+        "visual_details": [
+          "Built a web demo so stakeholders could test the processing flow early.",
+          "Designed backend endpoints and request flow for AI-driven processing.",
+          "Validated input format, limits, and edge cases before running processing steps.",
+          "Organized AI steps into a workflow that is easier to debug and improve.",
+          "Documented API contracts for client/mobile integration and testing."
+        ],
+        "metrics": ["3 roadmap options", "Mobile-ready API", "Weekend debugging"],
         "desc": [
           "Joined technical brainstorming with the CEO and proposed three delivery options: fast MVP, AI-integrated version, and full-featured version.",
-          "Designed API endpoints for audio processing, implemented backend logic, and wrote documentation for mobile integration.",
-          "Debugged post-release issues across audio formats and browsers, including Safari, Chrome, and Brave.",
+          "Designed API endpoints for data processing, implemented backend logic, and wrote documentation for client/mobile integration.",
+          "Debugged post-release issues across input formats and browser environments.",
           "Proposed a keep-alive direction for server sleep issues and improved validation so the demo became more stable during client testing."
         ]
       },
@@ -76,6 +92,14 @@
         "name": "AI-Centric QR Menu Generator",
         "tech": ["React", "Tailwind CSS", "VietQR", "Telegram Bot", "CI/CD"],
         "visual_steps": ["React UI", "Menu Admin", "QR Payment", "Telegram Bot", "Deploy/CI"],
+        "visual_details": [
+          "Built the digital menu interface and core user states in React.",
+          "Created admin-facing controls for content, configuration, and menu display flow.",
+          "Integrated QR payment for the MVP checkout scenario.",
+          "Sent order notifications through Telegram to simulate real operations.",
+          "Packaged, deployed, and iterated on the demo based on feedback."
+        ],
+        "metrics": ["2-day MVP", "8-10h/day", "Feedback loop"],
         "desc": [
           "Built the QR Menu Generator MVP in two days, working independently with support from AI agents.",
           "Created a digital menu flow with QR payment and Telegram order notifications for an internal demo scenario.",
@@ -109,7 +133,8 @@
     "subheading": "04. What's Next?",
     "title": "Get In Touch",
     "description": "I am open to opportunities where backend engineering, AI integration, and product-minded software development meet. If that sounds useful, let's talk.",
-    "cta": "Say Hello"
+    "cta": "Say Hello",
+    "resume_cta": "View CV"
   },
   "footer": {
     "built_by": "Designed & Built by Dao Quang Thuan",
