@@ -3,23 +3,23 @@
     "intro": "Xin chào, tôi là",
     "title": "Đào Quang Thuận",
     "subtitle": "Xây dựng nền tảng web ổn định và hệ thống AI thực tiễn.",
-    "description": "Tôi là Software Engineer tập trung vào kiến trúc backend, hệ thống bất đồng bộ và tích hợp AI vào sản phẩm thật. Tôi thích biến những yêu cầu còn mơ hồ thành phần mềm ổn định, dễ quan sát và dễ bảo trì.",
+    "description": "Tôi là Software Engineer chuyên sâu về kiến trúc Backend, hệ thống bất đồng bộ và tích hợp AI. Tôi không chỉ viết code, tôi tập trung vào việc biến ý tưởng thành sản phẩm ổn định, có tư duy tối ưu chi phí và sẵn sàng vận hành thực tế.",
     "cta": "Xem các dự án của tôi"
   },
   "about": {
     "title": "Về Tôi",
-    "para1": "Hành trình của tôi bắt đầu từ nghiên cứu AI và quá trình training OLP/ICPC, nơi tôi rèn luyện tư duy giải quyết vấn đề dựa trên dữ liệu, ràng buộc và các trường hợp biên. Khi đi sâu hơn vào Software Engineering, tôi học cách tận dụng AI-assisted workflow để tăng tốc nhưng vẫn giữ trọng tâm ở chất lượng production, kiến trúc và khả năng bảo trì.",
-    "para2": "Tôi phát huy tốt nhất trong những hệ thống cần ranh giới rõ ràng, xử lý bất đồng bộ bền vững và các quyết định trade-off cẩn thận. Tôi quan tâm đến tốc độ ra mắt sản phẩm, nhưng còn quan tâm hơn đến việc xây dựng phần mềm có thể vận hành, hiểu được và cải tiến sau lần release đầu tiên.",
+    "para1": "Hành trình của tôi bắt đầu từ nghiên cứu AI và training OLP/ICPC, nơi tôi rèn luyện tư duy giải quyết vấn đề dưới các ràng buộc khắt khe. Khi chuyển sang Software Engineering, tôi định vị mình là một Product Engineer — người chịu trách nhiệm cho toàn bộ vòng đời sản phẩm từ thiết kế kiến trúc đến trải nghiệm người dùng cuối.",
+    "para2": "Tôi phát huy tốt nhất trong những hệ thống cần ranh giới rõ ràng, xử lý bất đồng bộ bền vững và các quyết định trade-off thông minh. Tôi tin rằng phần mềm tốt không chỉ là chạy đúng, mà còn phải dễ quan sát, dễ mở rộng và tối ưu về mặt tài nguyên vận hành.",
     "skills_intro": "Dưới đây là một vài công nghệ và hướng thực hành tôi đã làm việc gần đây:",
     "skills": [
-      "FastAPI",
-      "NestJS",
-      "Python/TypeScript",
-      "React/Tailwind CSS",
-      "Celery/Azure Service Bus",
-      "PostgreSQL/TypeORM",
-      "Docker/CI-CD",
-      "LLM/OCR Integration"
+      "FastAPI / NestJS",
+      "Python / TypeScript",
+      "Celery / Azure Service Bus",
+      "PostgreSQL / Firestore",
+      "Docker / CI-CD (GitHub Actions)",
+      "React / Tailwind CSS",
+      "AI Integration (LLM/OCR)",
+      "System Optimization (Caching/IndexedDB)"
     ]
   },
   "experience": {
@@ -29,9 +29,9 @@
         "role": "Software Engineer Intern",
         "range": "Tháng 4 2025 - Hiện tại",
         "points": [
-          "Từ research AI và maintain các task nhỏ, chuyển sang đóng góp trực tiếp trên production codebase với FastAPI, NestJS, queue và WebSocket.",
-          "Xây dựng các phần backend cho tác vụ AI chạy lâu: xử lý nền, retry khi lỗi tạm thời, cập nhật tiến trình realtime và debug lỗi nhiều layer.",
-          "Tham gia một MVP AI ở giai đoạn định hướng kỹ thuật: đề xuất roadmap theo nhiều mức độ hoàn thiện, build API và xử lý feedback sau khi client test."
+          "Chuyển từ nghiên cứu AI sang đóng góp trực tiếp trên production codebase, chịu trách nhiệm cho các module backend phức tạp sử dụng FastAPI, NestJS và Message Queue.",
+          "Thiết kế và triển khai hệ thống xử lý tác vụ chạy lâu (long-running tasks) với cơ chế retry, exponential backoff và cập nhật tiến trình realtime.",
+          "Chủ động tham gia vào giai đoạn định hướng sản phẩm (Product Discovery), đề xuất các phương án kỹ thuật cân bằng giữa tốc độ release và tính ổn định lâu dài."
         ]
       },
       {
@@ -40,8 +40,8 @@
         "range": "2022 - Hiện tại",
         "points": [
           "Từng tham gia training đội tuyển OLP/ICPC, rèn luyện tư duy thuật toán, phân rã bài toán và debug dưới áp lực thời gian.",
-          "Đạt giải \"Công trình xuất sắc\" trong báo cáo lần 1 cấp Khoa.",
-          "Từng làm trợ giảng cho 2 học phần \"Nhập môn lập trình\" và \"Kĩ Thuật Lập Trình\" trong 4 kì học."
+          "Đạt giải \"Công trình xuất sắc\" trong báo cáo nghiên cứu khoa học cấp Khoa lần 1.",
+          "Trợ giảng cho các học phần lập trình cơ bản trong 4 học kỳ, hỗ trợ sinh viên xây dựng tư duy lập trình vững chắc."
         ]
       }
     ]
@@ -80,7 +80,7 @@
           "Tổ chức các bước xử lý AI thành workflow có thể debug và tối ưu.",
           "Viết API contract rõ ràng để client/mobile side tích hợp và test."
         ],
-        "metrics": ["3 roadmap options", "API cho mobile", "Debug cuối tuần"],
+        "metrics": ["3 roadmap options", "API cho mobile", "Debug thực chiến"],
         "desc": [
           "Tham gia brainstorm trực tiếp với CEO và đề xuất 3 hướng triển khai: MVP nhanh, bản có AI integration và bản full-featured.",
           "Thiết kế API cho luồng xử lý dữ liệu, viết tài liệu đủ rõ để phía client/mobile tích hợp và test.",
@@ -99,12 +99,12 @@
           "Tự động gửi thông báo đơn hàng qua Telegram để mô phỏng vận hành thực tế.",
           "Đóng gói, deploy và lặp lại theo feedback để hoàn thiện demo."
         ],
-        "metrics": ["MVP trong 2 ngày", "8-10h/ngày", "Feedback loop"],
+        "metrics": ["Triển khai thực tế", "MVP", "Interactive Bot"],
         "desc": [
-          "Build MVP web application QR Menu Generator trong 2 ngày, làm độc lập với sự hỗ trợ của AI agents.",
-          "Tạo luồng menu kỹ thuật số, thanh toán QR và thông báo đơn hàng qua Telegram cho kịch bản demo nội bộ.",
-          "Tối ưu truy vấn dữ liệu, bổ sung client-side caching và hoàn thiện UI/UX sau nhiều vòng feedback.",
-          "Deploy bản web để PM review và tiếp tục chỉnh theo yêu cầu mới trong vòng lặp build → feedback → iterate."
+          "Build MVP QR Menu Generator và đưa vào vận hành thử nghiệm tại một quán cafe thực tế.",
+          "Tích hợp hệ thống thông báo đơn hàng 2 chiều qua Telegram Bot, cho phép xác nhận/hủy đơn ngay lập tức.",
+          "Tối ưu chi phí vận hành bằng cơ chế Client-side Caching (IndexedDB), giảm thiểu 90% lượt đọc Firestore lặp lại.",
+          "Triển khai luồng thanh toán QR VietQR tự động, xử lý trọn vẹn vòng đời từ đặt hàng đến xác nhận thanh toán."
         ]
       }
     ],

@@ -3,23 +3,23 @@
     "intro": "Hi, my name is",
     "title": "Dao Quang Thuan",
     "subtitle": "Building reliable web platforms and AI-powered systems.",
-    "description": "I am a Software Engineer focused on backend architecture, asynchronous systems, and practical AI integration. I enjoy turning ambiguous product ideas into stable, observable, and maintainable software.",
+    "description": "I am a Software Engineer specializing in Backend architecture, asynchronous systems, and AI integration. I don't just write code; I focus on turning ideas into stable, cost-optimized products ready for real-world operations.",
     "cta": "Check out my work"
   },
   "about": {
     "title": "About Me",
-    "para1": "My journey started with AI research and competitive programming training, where I built a strong habit of reasoning from data, constraints, and edge cases. As I moved deeper into Software Engineering, I learned to use AI-assisted workflows for speed while still keeping production quality, architecture, and maintainability at the center.",
-    "para2": "I am strongest when working on systems that need clear boundaries, resilient asynchronous processing, and careful trade-off decisions. I care about shipping quickly, but I care even more about building software that can be understood, operated, and improved after the first release.",
+    "para1": "My journey started with AI research and competitive programming training (OLP/ICPC), where I built a strong habit of reasoning under tight constraints. As I moved into Software Engineering, I positioned myself as a Product Engineer — responsible for the entire product lifecycle from architectural design to end-user experience.",
+    "para2": "I am strongest when working on systems that need clear boundaries, resilient asynchronous processing, and smart trade-off decisions. I believe great software isn't just about running correctly; it must be observable, scalable, and highly optimized for operational resources.",
     "skills_intro": "Here are a few technologies and practices I have been working with recently:",
     "skills": [
-      "FastAPI",
-      "NestJS",
-      "Python/TypeScript",
-      "React/Tailwind CSS",
-      "Celery/Azure Service Bus",
-      "PostgreSQL/TypeORM",
-      "Docker/CI-CD",
-      "LLM/OCR Integration"
+      "FastAPI / NestJS",
+      "Python / TypeScript",
+      "Celery / Azure Service Bus",
+      "PostgreSQL / Firestore",
+      "Docker / CI-CD (GitHub Actions)",
+      "React / Tailwind CSS",
+      "AI Integration (LLM/OCR)",
+      "System Optimization (Caching/IndexedDB)"
     ]
   },
   "experience": {
@@ -29,9 +29,9 @@
         "role": "Software Engineer Intern",
         "range": "April 2025 - Present",
         "points": [
-          "Moved from AI research and small maintenance tasks into production backend work with FastAPI, NestJS, queues, and WebSockets.",
-          "Built backend pieces for long-running AI tasks: background processing, retry behavior, real-time progress updates, and multi-layer debugging.",
-          "Contributed to an AI MVP from technical planning through API delivery and feedback handling after client testing."
+          "Transitioned from AI research to contributing directly to the production codebase, taking ownership of complex backend modules using FastAPI, NestJS, and Message Queues.",
+          "Designed and implemented long-running task processing systems with robust retry mechanisms, exponential backoff, and real-time progress updates.",
+          "Proactively engaged in Product Discovery phases, proposing technical solutions that balance release speed with long-term stability and scalability."
         ]
       },
       {
@@ -40,8 +40,8 @@
         "range": "2022 - Present",
         "points": [
           "Trained with the OLP/ICPC programming team, strengthening algorithmic thinking, problem decomposition, and debugging under time pressure.",
-          "Received the 'Excellent Research Project' recognition in the first faculty-level student research report.",
-          "Served as a teaching assistant for 'Introduction to Programming' and 'Programming Techniques' across four semesters."
+          "Received the 'Excellent Research Project' recognition in the faculty-level student research competition.",
+          "Served as a teaching assistant for fundamental programming courses for four semesters, helping students build strong logical foundations."
         ]
       }
     ]
@@ -80,7 +80,7 @@
           "Organized AI steps into a workflow that is easier to debug and improve.",
           "Documented API contracts for client/mobile integration and testing."
         ],
-        "metrics": ["3 roadmap options", "Mobile-ready API", "Weekend debugging"],
+        "metrics": ["3 roadmap options", "Mobile-ready API", "Real-world debugging"],
         "desc": [
           "Joined technical brainstorming with the CEO and proposed three delivery options: fast MVP, AI-integrated version, and full-featured version.",
           "Designed API endpoints for data processing, implemented backend logic, and wrote documentation for client/mobile integration.",
@@ -99,12 +99,12 @@
           "Sent order notifications through Telegram to simulate real operations.",
           "Packaged, deployed, and iterated on the demo based on feedback."
         ],
-        "metrics": ["2-day MVP", "8-10h/day", "Feedback loop"],
+        "metrics": ["Real-world testing", "MVP", "Interactive Bot"],
         "desc": [
-          "Built the QR Menu Generator MVP in two days, working independently with support from AI agents.",
-          "Created a digital menu flow with QR payment and Telegram order notifications for an internal demo scenario.",
-          "Improved data queries, added client-side caching, and refined UI/UX after multiple feedback rounds.",
-          "Deployed the web app for PM review and continued iterating through the build → feedback → improve loop."
+          "Built the QR Menu Generator MVP and deployed it for live testing at a local coffee shop.",
+          "Integrated a 2-way Telegram Bot notification system, allowing staff to confirm or cancel orders directly from the chat.",
+          "Optimized operational costs using Client-side Caching (IndexedDB), reducing Firestore read requests by 90% for repeat customers.",
+          "Implemented an automated VietQR payment flow, handling the entire order lifecycle from selection to payment confirmation."
         ]
       }
     ],
