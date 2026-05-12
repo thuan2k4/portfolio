@@ -1,3 +1,5 @@
+import avatarImage from './assets/me.jpg';
+
 const CONFIG = {
   email: 'qthuan1234@gmail.com',
 
@@ -11,8 +13,8 @@ const CONFIG = {
   // TODO: Dien link CV/Resume Google Drive hoac file PDF public vao day.
   resumeUrl: '#',
 
-  // TODO: Doi thanh null neu muon dung placeholder, hoac thay bang path anh khac.
-  avatarUrl: 'src/assets/me.JPG',
+  // TODO: Doi thanh null neu muon dung placeholder, hoac import anh khac o dong tren.
+  avatarUrl: avatarImage,
 
   projectLinks: {
     // TODO: Dien link GitHub cho tung featured project theo dung thu tu trong locales.
