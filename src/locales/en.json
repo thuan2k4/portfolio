@@ -15,10 +15,10 @@
       "FastAPI / NestJS",
       "Python / TypeScript",
       "Celery / Azure Service Bus",
-      "PostgreSQL / Firestore",
+      "PostgreSQL / Firebase / Redis",
       "Docker / CI-CD (GitHub Actions)",
       "React / Tailwind CSS",
-      "AI Integration (LLM/OCR)",
+      "Audio DSP (FFmpeg/Librosa)",
       "System Optimization (Caching/IndexedDB)"
     ]
   },
@@ -26,12 +26,22 @@
     "jobs": [
       {
         "company": "Tenomad",
-        "role": "Software Engineer Intern",
+        "role": "Software Engineer",
         "range": "April 2025 - Present",
         "points": [
-          "Transitioned from AI research to contributing directly to the production codebase, taking ownership of complex backend modules using FastAPI, NestJS, and Message Queues.",
-          "Designed and implemented long-running task processing systems with robust retry mechanisms, exponential backoff, and real-time progress updates.",
-          "Proactively engaged in Product Discovery phases, proposing technical solutions that balance release speed with long-term stability and scalability."
+          "Led full-stack development across multiple production systems: backend APIs (FastAPI, NestJS), real-time workflows, and consumer-facing interfaces (React, Tailwind CSS).",
+          "Designed and implemented asynchronous processing systems with reliable message queuing, worker pools, and exponential backoff for fault recovery.",
+          "Specialized in cost optimization: reduced Firestore operational costs by 90% through intelligent client-side caching (IndexedDB), and optimized cloud message queue handling to bypass provider payload limitations."
+        ]
+      },
+      {
+        "company": "Freelance / QR Menu Maker",
+        "role": "Solo Fullstack Developer",
+        "range": "April 2025 - Present",
+        "points": [
+          "Built and deployed a commercial self-ordering platform for restaurants from zero to production, currently serving 2 pilot coffee shops with 1 live for over a month.",
+          "Established end-to-end CI/CD pipeline using GitHub Actions for automated linting, testing, and deployment; integrated Telegram Bot API for real-time order notifications.",
+          "Implemented secure payment integration (VietQR), multi-language support, and merchant admin dashboard for menu/pricing management."
         ]
       },
       {
@@ -51,80 +61,80 @@
     "featured_label": "Featured Case Study",
     "featured": [
       {
-        "name": "Enterprise AI Processing System (NDA)",
+        "name": "Audio Processing & API Service (Confidential)",
+        "tech": ["Python", "FastAPI", "Audio DSP", "Docker", "Client Validation"],
+        "visual_steps": ["User Demo", "FastAPI Backend", "Audio Validation", "DSP Pipeline", "Stream Result"],
+        "visual_details": [
+          "Designed stakeholder-facing web demo for early feedback and client validation.",
+          "Built backend endpoints for audio intake, processing, and result delivery.",
+          "Implemented multi-format audio validation (MP3, WAV, frequency detection) with clear error messaging.",
+          "Orchestrated audio signal processing workflows with recovery mechanisms for production stability.",
+          "Delivered results back to client with proper streaming and state management."
+        ],
+        "metrics": ["3-version roadmap", "Production stability", "Cross-browser support"],
+        "desc": [
+          "Co-designed a 3-version technical roadmap (MVP → Full-featured) with the CEO to balance speed and completeness.",
+          "Built backend APIs and documented integration contracts for mobile client adoption.",
+          "Diagnosed and resolved critical launch-phase issues: cross-browser compatibility (Safari/Chrome), multi-format validation, and production stability.",
+          "Engineered robust audio processing with fallback strategies and keep-alive mechanisms to ensure reliable operation during peak usage."
+        ]
+      },
+      {
+        "name": "Document Processing & Real-Time Gateway (Confidential)",
         "tech": ["FastAPI", "NestJS", "Celery", "Azure Service Bus", "WebSockets"],
-        "visual_steps": ["FE Upload/Progress", "Backend API", "Queue/Worker", "AI Service", "Realtime Result"],
+        "visual_steps": ["Frontend Submit", "API Queue", "Worker Pool", "Processing", "Realtime Update"],
         "visual_details": [
-          "Designed the task submission UI and progress states for long-running work.",
-          "Accepted requests, validated input, and created job metadata for background processing.",
-          "Queued jobs for asynchronous workers so the main API stayed responsive.",
-          "Called AI services through an abstraction layer so providers can change safely.",
-          "Pushed processing status back to the frontend through a realtime channel."
+          "Built task submission interface with progress state management.",
+          "Designed request validation and job metadata creation for background processing.",
+          "Queued work for asynchronous processing to keep main API responsive.",
+          "Managed distributed task execution with health monitoring and recovery.",
+          "Streamed processing status back to clients through real-time channels."
         ],
-        "metrics": ["4 realtime states", "Background workers", "Retry/backoff"],
+        "metrics": ["Async resilience", "Real-time updates", "Queue optimization"],
         "desc": [
-          "Implemented an asynchronous AI processing pipeline so long-running tasks are handled by background workers without blocking API responses.",
-          "Refactored provider selection with Factory Pattern, making the code easier to extend when adding or changing providers.",
-          "Fixed a production issue around queue message size limits by sending reference IDs instead of oversized payloads.",
-          "Built retry with exponential backoff and real-time progress through WebSockets so the system recovers better and users can follow processing status."
+          "Architected an asynchronous document processing pipeline with background workers to prevent API blocking on long-running tasks.",
+          "Optimized cloud messaging by bypassing payload limits: passed reference IDs and SAS URLs instead of full file streams, reducing network overhead.",
+          "Implemented proactive worker recovery with periodic health checks and automatic task requeue, improving system reliability and reducing stuck-task incidents.",
+          "Built a real-time progress gateway using WebSockets, allowing clients to follow processing status and improving overall system responsiveness."
         ]
       },
       {
-        "name": "AI Processing MVP (NDA)",
-        "tech": ["Python", "FastAPI", "Data Processing", "AI Integration", "API Docs"],
-        "visual_steps": ["Web Demo", "FastAPI Backend", "Input Validate", "AI Workflow", "Client API"],
+        "name": "QR Menu Generator Platform (Production)",
+        "tech": ["React", "Tailwind CSS", "FastAPI", "Firebase", "Telegram Bot", "GitHub Actions"],
+        "visual_steps": ["React UI", "Admin Panel", "Payment Integration", "Bot Notifications", "Live Deploy"],
         "visual_details": [
-          "Built a web demo so stakeholders could test the processing flow early.",
-          "Designed backend endpoints and request flow for AI-driven processing.",
-          "Validated input format, limits, and edge cases before running processing steps.",
-          "Organized AI steps into a workflow that is easier to debug and improve.",
-          "Documented API contracts for client/mobile integration and testing."
+          "Implemented responsive digital menu interface with core ordering flows.",
+          "Built merchant admin dashboard for content management, pricing, and menu configuration.",
+          "Integrated VietQR payment processing for the complete order lifecycle.",
+          "Connected Telegram Bot API for real-time order notifications and staff confirmations.",
+          "Established CI/CD pipeline with automated testing and deployment."
         ],
-        "metrics": ["3 roadmap options", "Mobile-ready API", "Real-world debugging"],
+        "metrics": ["2 live pilots", "90% cost reduction", "Interactive notifications"],
         "desc": [
-          "Joined technical brainstorming with the CEO and proposed three delivery options: fast MVP, AI-integrated version, and full-featured version.",
-          "Designed API endpoints for data processing, implemented backend logic, and wrote documentation for client/mobile integration.",
-          "Debugged post-release issues across input formats and browser environments.",
-          "Proposed a keep-alive direction for server sleep issues and improved validation so the demo became more stable during client testing."
-        ]
-      },
-      {
-        "name": "AI-Centric QR Menu Generator",
-        "tech": ["React", "Tailwind CSS", "VietQR", "Telegram Bot", "CI/CD"],
-        "visual_steps": ["React UI", "Menu Admin", "QR Payment", "Telegram Bot", "Deploy/CI"],
-        "visual_details": [
-          "Built the digital menu interface and core user states in React.",
-          "Created admin-facing controls for content, configuration, and menu display flow.",
-          "Integrated QR payment for the MVP checkout scenario.",
-          "Sent order notifications through Telegram to simulate real operations.",
-          "Packaged, deployed, and iterated on the demo based on feedback."
-        ],
-        "metrics": ["Real-world testing", "MVP", "Interactive Bot"],
-        "desc": [
-          "Built the QR Menu Generator MVP and deployed it for live testing at a local coffee shop.",
-          "Integrated a 2-way Telegram Bot notification system, allowing staff to confirm or cancel orders directly from the chat.",
-          "Optimized operational costs using Client-side Caching (IndexedDB), reducing Firestore read requests by 90% for repeat customers.",
-          "Implemented an automated VietQR payment flow, handling the entire order lifecycle from selection to payment confirmation."
+          "Developed and deployed a commercial self-ordering platform from scratch; currently live at 2 pilot coffee shops with 1 operating for over a month in production.",
+          "Implemented bi-directional Telegram Bot integration, enabling staff to receive and confirm/cancel orders directly from chat without a web dashboard.",
+          "Reduced Firestore operational costs by 90% through intelligent client-side caching (IndexedDB) and query optimization for repeat customers.",
+          "Established end-to-end CI/CD using GitHub Actions for linting, testing, and automated deployment with zero-downtime updates."
         ]
       }
     ],
     "noteworthy": {
-      "title": "Other Noteworthy Projects",
+      "title": "Other Notable Projects",
       "list": [
         {
-          "name": "CCCD/Passport Information Extraction",
-          "desc": "Document information extraction mini project: YOLO detects data regions, VietOCR reads text, and a ReactJS + Flask web app presents the result.",
-          "tech": ["Python", "YOLO", "VietOCR", "React", "Flask"]
+          "name": "Digital Menu System & E-Commerce Integration",
+          "desc": "Core digital menu platform with product variant management, pricing, category hierarchy, and merchant analytics dashboard. Migrated from NoSQL to relational SQL architecture.",
+          "tech": ["React", "Python", "FastAPI", "PostgreSQL", "Redis"]
         },
         {
-          "name": "Smart Home Website",
-          "desc": "Web interface for smart home monitoring and device control, focused on responsive UI, state management, and a practical dashboard experience.",
-          "tech": ["React", "IoT Dashboard", "Responsive UI"]
+          "name": "Commercial Printing Service Management",
+          "desc": "Backend optimization and API performance stabilization during post-release phase. Resolved connection pooling exhaustion and optimized query performance for high-concurrency order placement.",
+          "tech": ["Python", "FastAPI", "PostgreSQL", "Performance Tuning"]
         },
         {
-          "name": "E-Commerce Fullstack Engine",
-          "desc": "Self-built MERN Stack project for practicing fullstack workflows: product management, authentication, cart behavior, and end-to-end shopping flow.",
-          "tech": ["MERN Stack", "Redux", "JWT"]
+          "name": "Document Information Extraction (Research)",
+          "desc": "Computer vision pipeline for Vietnamese ID card (CCCD) extraction: YOLO object detection for card alignment, VietOCR for text recognition, and Flask dashboard for results presentation.",
+          "tech": ["Python", "YOLO", "VietOCR", "Flask", "OpenCV"]
         }
       ]
     }

@@ -15,10 +15,10 @@
       "FastAPI / NestJS",
       "Python / TypeScript",
       "Celery / Azure Service Bus",
-      "PostgreSQL / Firestore",
+      "PostgreSQL / Firebase / Redis",
       "Docker / CI-CD (GitHub Actions)",
       "React / Tailwind CSS",
-      "AI Integration (LLM/OCR)",
+      "Audio DSP (FFmpeg/Librosa)",
       "System Optimization (Caching/IndexedDB)"
     ]
   },
@@ -26,12 +26,22 @@
     "jobs": [
       {
         "company": "Tenomad",
-        "role": "Software Engineer Intern",
+        "role": "Software Engineer",
         "range": "Tháng 4 2025 - Hiện tại",
         "points": [
-          "Chuyển từ nghiên cứu AI sang đóng góp trực tiếp trên production codebase, chịu trách nhiệm cho các module backend phức tạp sử dụng FastAPI, NestJS và Message Queue.",
-          "Thiết kế và triển khai hệ thống xử lý tác vụ chạy lâu (long-running tasks) với cơ chế retry, exponential backoff và cập nhật tiến trình realtime.",
-          "Chủ động tham gia vào giai đoạn định hướng sản phẩm (Product Discovery), đề xuất các phương án kỹ thuật cân bằng giữa tốc độ release và tính ổn định lâu dài."
+          "Dẫn dắt phát triển fullstack trên nhiều hệ thống production: APIs backend (FastAPI, NestJS), các luồng xử lý realtime và giao diện hướng người dùng (React, Tailwind CSS).",
+          "Thiết kế và triển khai hệ thống xử lý bất đồng bộ với message queue tin cậy, worker pool và exponential backoff để phục hồi lỗi.",
+          "Chuyên sâu vào tối ưu chi phí: giảm 90% chi phí vận hành Firestore qua client-side caching (IndexedDB), tối ưu xử lý queue cloud để vượt qua giới hạn payload."
+        ]
+      },
+      {
+        "company": "Freelance / QR Menu Maker",
+        "role": "Fullstack Developer (Solo)",
+        "range": "Tháng 4 2025 - Hiện tại",
+        "points": [
+          "Xây dựng và triển khai nền tảng tự gọi món cho quán ăn từ con số 0, hiện đang phục vụ 2 quán cafe pilot với 1 quán đã vận hành thực tế trên 1 tháng.",
+          "Thiết lập CI/CD pipeline end-to-end sử dụng GitHub Actions cho linting tự động, testing và deployment; tích hợp Telegram Bot API cho thông báo đơn hàng realtime.",
+          "Triển khai thanh toán bảo mật (VietQR), hỗ trợ đa ngôn ngữ và dashboard quản lý merchant cho quản lý menu/giá cả."
         ]
       },
       {
@@ -51,80 +61,80 @@
     "featured_label": "Case Study Nổi Bật",
     "featured": [
       {
-        "name": "Enterprise AI Processing System (NDA)",
+        "name": "Xử Lý Âm Thanh & Dịch Vụ API (Bảo Mật)",
+        "tech": ["Python", "FastAPI", "Audio DSP", "Docker", "Kiểm Định Client"],
+        "visual_steps": ["Demo Người Dùng", "FastAPI Backend", "Kiểm Định Âm Thanh", "Pipeline DSP", "Trả Kết Quả"],
+        "visual_details": [
+          "Thiết kế demo web cho stakeholder lấy feedback sớm và xác nhận yêu cầu.",
+          "Xây dựng endpoint backend cho tiếp nhận, xử lý và trả kết quả âm thanh.",
+          "Triển khai kiểm định multi-format âm thanh (MP3, WAV, phát hiện tần số) với thông báo lỗi rõ ràng.",
+          "Sắp xếp quy trình xử lý tín hiệu âm thanh với cơ chế phục hồi cho ổn định production.",
+          "Trả kết quả về client qua streaming với quản lý trạng thái phù hợp."
+        ],
+        "metrics": ["Roadmap 3 version", "Ổn định production", "Hỗ trợ cross-browser"],
+        "desc": [
+          "Co-design roadmap kỹ thuật 3 version (MVP → Full-featured) cùng CEO để cân bằng tốc độ và tính hoàn chỉnh.",
+          "Xây dựng backend APIs và viết tài liệu tích hợp cho phía client/mobile sử dụng.",
+          "Debug các sự cố critical sau release: tương thích cross-browser (Safari/Chrome), kiểm định multi-format và ổn định vận hành.",
+          "Thiết kế xử lý audio signal robust với chiến lược fallback và cơ chế keep-alive để đảm bảo vận hành ổn định tại thời điểm cao điểm."
+        ]
+      },
+      {
+        "name": "Xử Lý Tài Liệu & Real-Time Gateway (Bảo Mật)",
         "tech": ["FastAPI", "NestJS", "Celery", "Azure Service Bus", "WebSockets"],
-        "visual_steps": ["FE Upload/Progress", "Backend API", "Queue/Worker", "AI Service", "Realtime Result"],
+        "visual_steps": ["Frontend Gửi", "API Queue", "Worker Pool", "Xử Lý", "Cập Nhật Realtime"],
         "visual_details": [
-          "Thiết kế màn hình gửi tác vụ và hiển thị tiến trình xử lý theo trạng thái.",
-          "Nhận request, kiểm tra dữ liệu đầu vào và tạo job metadata để xử lý nền.",
-          "Đưa job vào queue để worker xử lý bất đồng bộ, tránh block API chính.",
-          "Gọi service AI qua abstraction layer để dễ thay đổi provider khi cần.",
-          "Đẩy trạng thái về frontend qua realtime channel để người dùng theo dõi."
+          "Xây dựng giao diện gửi tác vụ với quản lý trạng thái tiến trình.",
+          "Thiết kế kiểm định request và tạo job metadata cho xử lý nền.",
+          "Đưa work vào queue để xử lý bất đồng bộ giữ API responsive.",
+          "Quản lý thực thi tác vụ phân tán với monitoring sức khỏe và phục hồi.",
+          "Gửi tiến trình xử lý về client qua realtime channel."
         ],
-        "metrics": ["4 trạng thái realtime", "Worker xử lý nền", "Retry/backoff"],
+        "metrics": ["Khả năng phục hồi Async", "Cập nhật realtime", "Tối ưu Queue"],
         "desc": [
-          "Triển khai pipeline xử lý AI bất đồng bộ để tác vụ chạy lâu được xử lý bởi worker nền, API không bị block.",
-          "Refactor phần chọn provider theo Factory Pattern, giúp code dễ mở rộng khi cần thêm hoặc thay provider.",
-          "Fix lỗi production liên quan đến giới hạn kích thước message queue bằng cách gửi reference ID thay vì payload lớn.",
-          "Xây dựng retry với exponential backoff và progress realtime qua WebSocket để hệ thống tự phục hồi tốt hơn và người dùng theo dõi được trạng thái xử lý."
+          "Kiến trúc pipeline xử lý tài liệu bất đồng bộ với worker nền để tránh API bị block trên tác vụ chạy lâu.",
+          "Tối ưu cloud messaging bằng cách vượt qua giới hạn payload: gửi reference ID và SAS URL thay vì stream file toàn bộ, giảm network overhead.",
+          "Triển khai phục hồi worker chủ động qua health check định kỳ và auto requeue tác vụ, tăng độ tin cậy hệ thống và giảm sự cố task stuck.",
+          "Xây dựng real-time progress gateway dùng WebSocket, cho phép client theo dõi tiến trình xử lý và cải thiện responsiveness hệ thống."
         ]
       },
       {
-        "name": "AI Processing MVP (NDA)",
-        "tech": ["Python", "FastAPI", "Data Processing", "AI Integration", "API Docs"],
-        "visual_steps": ["Web Demo", "FastAPI Backend", "Input Validate", "AI Workflow", "Client API"],
+        "name": "Nền Tảng QR Menu Generator (Production)",
+        "tech": ["React", "Tailwind CSS", "FastAPI", "Firebase", "Telegram Bot", "GitHub Actions"],
+        "visual_steps": ["React UI", "Admin Panel", "Payment Integration", "Bot Notifications", "Live Deploy"],
         "visual_details": [
-          "Dựng demo web để stakeholder kiểm thử luồng xử lý mà không cần app đầy đủ.",
-          "Thiết kế endpoint và luồng backend phục vụ tác vụ AI chạy theo request.",
-          "Kiểm tra định dạng, giới hạn và edge case của dữ liệu đầu vào.",
-          "Tổ chức các bước xử lý AI thành workflow có thể debug và tối ưu.",
-          "Viết API contract rõ ràng để client/mobile side tích hợp và test."
+          "Xây dựng giao diện menu số responsive với các luồng đặt hàng chính.",
+          "Dựng dashboard quản trị merchant cho quản lý nội dung, giá cả và cấu hình menu.",
+          "Tích hợp xử lý thanh toán VietQR cho vòng đời đơn hàng hoàn chỉnh.",
+          "Kết nối Telegram Bot API cho thông báo đơn hàng realtime và xác nhận nhân viên.",
+          "Thiết lập CI/CD pipeline với test tự động và deployment."
         ],
-        "metrics": ["3 roadmap options", "API cho mobile", "Debug thực chiến"],
+        "metrics": ["2 pilot live", "Giảm 90% chi phí", "Thông báo interactive"],
         "desc": [
-          "Tham gia brainstorm trực tiếp với CEO và đề xuất 3 hướng triển khai: MVP nhanh, bản có AI integration và bản full-featured.",
-          "Thiết kế API cho luồng xử lý dữ liệu, viết tài liệu đủ rõ để phía client/mobile tích hợp và test.",
-          "Debug sau release với nhiều định dạng đầu vào và môi trường trình duyệt khác nhau.",
-          "Đề xuất hướng xử lý server sleep/keep-alive và chỉnh validation để bản demo ổn định hơn khi client test."
-        ]
-      },
-      {
-        "name": "AI-Centric QR Menu Generator",
-        "tech": ["React", "Tailwind CSS", "VietQR", "Telegram Bot", "CI/CD"],
-        "visual_steps": ["React UI", "Menu Admin", "QR Payment", "Telegram Bot", "Deploy/CI"],
-        "visual_details": [
-          "Xây dựng giao diện menu số và các trạng thái người dùng chính bằng React.",
-          "Tạo khu vực quản trị để chỉnh nội dung, cấu hình và luồng hiển thị menu.",
-          "Tích hợp QR payment cho kịch bản thanh toán nhanh trong MVP.",
-          "Tự động gửi thông báo đơn hàng qua Telegram để mô phỏng vận hành thực tế.",
-          "Đóng gói, deploy và lặp lại theo feedback để hoàn thiện demo."
-        ],
-        "metrics": ["Triển khai thực tế", "MVP", "Interactive Bot"],
-        "desc": [
-          "Build MVP QR Menu Generator và đưa vào vận hành thử nghiệm tại một quán cafe thực tế.",
-          "Tích hợp hệ thống thông báo đơn hàng 2 chiều qua Telegram Bot, cho phép xác nhận/hủy đơn ngay lập tức.",
-          "Tối ưu chi phí vận hành bằng cơ chế Client-side Caching (IndexedDB), giảm thiểu 90% lượt đọc Firestore lặp lại.",
-          "Triển khai luồng thanh toán QR VietQR tự động, xử lý trọn vẹn vòng đời từ đặt hàng đến xác nhận thanh toán."
+          "Phát triển và triển khai nền tảng tự gọi món thương mại từ con số 0; hiện đang vận hành tại 2 quán cafe pilot với 1 quán live trên 1 tháng.",
+          "Triển khai tích hợp Telegram Bot 2 chiều, cho phép nhân viên nhận và xác nhận/hủy đơn trực tiếp qua chat mà không cần web dashboard.",
+          "Giảm chi phí Firestore 90% qua client-side caching (IndexedDB) và tối ưu query cho khách hàng lặp lại.",
+          "Thiết lập CI/CD end-to-end với GitHub Actions cho linting, testing và deploy tự động với zero-downtime update."
         ]
       }
     ],
     "noteworthy": {
-      "title": "Các Dự Án Khác",
+      "title": "Các Dự Án Khác Đáng Chú Ý",
       "list": [
         {
-          "name": "Trích Xuất Thông Tin CCCD/Passport",
-          "desc": "Mini project nhận dạng thông tin giấy tờ: dùng YOLO để phát hiện vùng dữ liệu và VietOCR để đọc text, sau đó hiển thị qua web fullstack ReactJS + Flask.",
-          "tech": ["Python", "YOLO", "VietOCR", "React", "Flask"]
+          "name": "Hệ Thống Menu Số Hóa & Tích Hợp E-Commerce",
+          "desc": "Nền tảng menu số lõi với quản lý biến thể sản phẩm, giá cả, cấu trúc danh mục và dashboard phân tích merchant. Đã migrate từ NoSQL sang kiến trúc SQL relational.",
+          "tech": ["React", "Python", "FastAPI", "PostgreSQL", "Redis"]
         },
         {
-          "name": "Smart Home Website",
-          "desc": "Giao diện web cho theo dõi và điều khiển thiết bị nhà thông minh, tập trung vào responsive UI, quản lý state và trải nghiệm dashboard thực tế.",
-          "tech": ["React", "IoT Dashboard", "Responsive UI"]
+          "name": "Dịch Vụ Quản Lý In Ấn Thương Mại",
+          "desc": "Tối ưu backend và ổn định hiệu năng API khi hệ thống ở giai đoạn sau release. Giải quyết vấn đề exhaustion pool connection và tối ưu performance query cho xử lý đơn hàng cao độ đồng thời.",
+          "tech": ["Python", "FastAPI", "PostgreSQL", "Performance Tuning"]
         },
         {
-          "name": "E-Commerce Fullstack Engine",
-          "desc": "Project tự build bằng MERN Stack để luyện quy trình fullstack: quản lý sản phẩm, xác thực người dùng, giỏ hàng và luồng mua sắm end-to-end.",
-          "tech": ["MERN Stack", "Redux", "JWT"]
+          "name": "Trích Xuất Thông Tin Giấy Tờ (Nghiên Cứu)",
+          "desc": "Pipeline computer vision cho trích xuất giấy tờ căn cước (CCCD): YOLO phát hiện và canh chỉnh card, VietOCR đọc text, Flask web app hiển thị kết quả.",
+          "tech": ["Python", "YOLO", "VietOCR", "Flask", "OpenCV"]
         }
       ]
     }
