@@ -27,11 +27,11 @@ const CONFIG = {
 
     // TODO: Dien link GitHub cho tung noteworthy project theo dung thu tu trong locales.
     noteworthy: [
-      { github: 'https://github.com/thuan2k4/CCCD-Text-Extraction' },
+      { github: 'https://github.com/thuan2k4/FullStack-Ecommerce' },
       {
         github: 'https://github.com/hoangbaokhanh1511/Smart-Home-Website',
       },
-      { github: 'https://github.com/thuan2k4/FullStack-Ecommerce' },
+      { github: 'https://github.com/thuan2k4/CCCD-Text-Extraction' },
     ],
   },
 };

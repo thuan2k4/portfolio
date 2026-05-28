@@ -127,9 +127,9 @@
           "tech": ["React", "Python", "FastAPI", "PostgreSQL", "Redis"]
         },
         {
-          "name": "Dịch Vụ Quản Lý In Ấn Thương Mại",
-          "desc": "Tối ưu backend và ổn định hiệu năng API khi hệ thống ở giai đoạn sau release. Giải quyết vấn đề exhaustion pool connection và tối ưu performance query cho xử lý đơn hàng cao độ đồng thời.",
-          "tech": ["Python", "FastAPI", "PostgreSQL", "Performance Tuning"]
+          "name": "Hệ Thống Giám Sát & Điều Khiển Smart Home (IoT)",
+          "desc": "Hệ thống web dashboard điều khiển thiết bị IoT trong nhà theo thời gian thực. Hỗ trợ giám sát nhiệt độ, độ ẩm, trạng thái thiết bị qua giao thức WebSocket và MQTT, tích hợp biểu đồ trực quan sinh động.",
+          "tech": ["React", "Node.js", "MQTT", "WebSocket", "Chart.js"]
         },
         {
           "name": "Trích Xuất Thông Tin Giấy Tờ (Nghiên Cứu)",

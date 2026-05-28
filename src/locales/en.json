@@ -127,9 +127,9 @@
           "tech": ["React", "Python", "FastAPI", "PostgreSQL", "Redis"]
         },
         {
-          "name": "Commercial Printing Service Management",
-          "desc": "Backend optimization and API performance stabilization during post-release phase. Resolved connection pooling exhaustion and optimized query performance for high-concurrency order placement.",
-          "tech": ["Python", "FastAPI", "PostgreSQL", "Performance Tuning"]
+          "name": "Smart Home Monitoring & Control System (IoT)",
+          "desc": "Real-time web dashboard for controlling and monitoring home IoT devices. Supports tracking temperature, humidity, lighting, and appliance statuses via WebSocket and MQTT protocols, featuring interactive data visualization.",
+          "tech": ["React", "Node.js", "MQTT", "WebSocket", "Chart.js"]
         },
         {
           "name": "Document Information Extraction (Research)",
