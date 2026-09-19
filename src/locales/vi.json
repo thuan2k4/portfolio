@@ -12,46 +12,60 @@
     "para2": "Tôi phát huy tốt nhất trong những hệ thống cần ranh giới rõ ràng, xử lý bất đồng bộ bền vững và các quyết định trade-off thông minh. Tôi tin rằng phần mềm tốt không chỉ là chạy đúng, mà còn phải dễ quan sát, dễ mở rộng và tối ưu về mặt tài nguyên vận hành.",
     "skills_intro": "Dưới đây là một vài công nghệ và hướng thực hành tôi đã làm việc gần đây:",
     "skills": [
-      "FastAPI / NestJS",
-      "Python / TypeScript",
-      "Celery / Azure Service Bus",
-      "PostgreSQL / Firebase / Redis",
-      "Docker / CI-CD (GitHub Actions)",
-      "React / Tailwind CSS",
-      "Audio DSP (FFmpeg/Librosa)",
-      "System Optimization (Caching/IndexedDB)"
+      "Next.js 15 / React 18 / Astro 5",
+      "FastAPI / NestJS / Python / TypeScript",
+      "PostgreSQL (Prisma) / Redis / Firebase",
+      "Celery / Azure Service Bus (Async Queues)",
+      "Agentic SEO & GEO (Schema JSON-LD / llms.txt)",
+      "Senior-Centric UX & Accessibility (Radix UI)",
+      "Docker / CI-CD / Serverless Edge Deploy",
+      "System Optimization (IndexedDB / State Machines)"
     ]
   },
   "experience": {
     "jobs": [
       {
-        "company": "Tenomad",
-        "role": "Software Engineer",
-        "range": "Tháng 4 2025 - Hiện tại",
+        "company": "TAT Team",
+        "role": "Fullstack & Product Engineer",
+        "range": "Tháng 7 2026 - Hiện tại",
         "points": [
-          "Dẫn dắt phát triển fullstack trên nhiều hệ thống production: APIs backend (FastAPI, NestJS), các luồng xử lý realtime và giao diện hướng người dùng (React, Tailwind CSS).",
-          "Thiết kế và triển khai hệ thống xử lý bất đồng bộ với message queue tin cậy, worker pool và exponential backoff để phục hồi lỗi.",
-          "Chuyên sâu vào tối ưu chi phí: giảm 90% chi phí vận hành Firestore qua client-side caching (IndexedDB), tối ưu xử lý queue cloud để vượt qua giới hạn payload."
+          "Frontend & Senior-First UX: Xây dựng hệ thống bằng Next.js 15 (App Router, Turbopack), Tailwind CSS v4 và Radix UI; chuẩn hóa UX cho người cao tuổi (70+): cấm vỡ dòng nút thao tác (whitespace-nowrap), tạo component ImagePasteDropzone (hỗ trợ Ctrl+V / dán trực tiếp ảnh từ Zalo/Clipboard) và xử lý adaptive viewport modal (max-h-[90dvh]).",
+          "Backend & Data Layer: Thiết kế kiến trúc Next.js Server Actions, Prisma ORM và Supabase PostgreSQL; phát triển tiện ích đệ quy serializePrisma giải quyết triệt để lỗi runtime serialization của Prisma Decimal sang Client Components.",
+          "Accounting State Machine (ADR-005): Thiết kế State Machine quản lý vòng đời công nợ với trạng thái ROLLED_INTO thực thi trong prisma.$transaction nguyên tử (atomic), triệt tiêu 100% hiện tượng nợ ảo và tính trùng công nợ khi dồn nợ sang kỳ hóa đơn mới.",
+          "Enterprise Soft Delete & Testing: Hiện thực hóa cơ chế Soft Delete tự động hậu tố hóa Unique Constraint (roomNumber_del_timestamp) nhằm giải phóng ràng buộc khóa mà vẫn bảo tồn 100% chứng từ kế toán; xây dựng bộ kiểm thử Playwright E2E bao phủ toàn bộ luồng chốt chỉ số và xuất hóa đơn."
         ]
       },
       {
-        "company": "Freelance / QR Menu Maker",
-        "role": "Fullstack Developer (Solo)",
-        "range": "Tháng 4 2025 - Hiện tại",
+        "company": "SignMenu (Cá nhân)",
+        "role": "Founder & Solo Fullstack Engineer",
+        "range": "Tháng 4 2026 - Hiện tại",
         "points": [
-          "Xây dựng và triển khai nền tảng tự gọi món cho quán ăn từ con số 0, hiện đang phục vụ 2 quán cafe pilot với 1 quán đã vận hành thực tế trên 1 tháng.",
-          "Thiết lập CI/CD pipeline end-to-end sử dụng GitHub Actions cho linting tự động, testing và deployment; tích hợp Telegram Bot API cho thông báo đơn hàng realtime.",
-          "Triển khai thanh toán bảo mật (VietQR), hỗ trợ đa ngôn ngữ và dashboard quản lý merchant cho quản lý menu/giá cả."
+          "MVP Core (Tháng 4/2026): Xây dựng và launch trong 1 tháng nền tảng gọi món số bằng React 18 SPA, tích hợp Firebase Firestore, sinh mã VietQR động chuẩn EMVCo Napas 24/7 (0% phí trung gian, không cần POS), Web Audio API phát chuông báo đơn và webhook Telegram Bot realtime.",
+          "Tối Ưu Chi Phí & Client Cache: Triển khai cơ chế client-side cache qua IndexedDB giúp giảm 90% chi phí đọc dữ liệu Firestore cho khách hàng quay lại, duy trì chi phí vận hành 0đ/tháng trong suốt quá trình thử nghiệm.",
+          "Nâng Cấp Hybrid Monorepo (Từ Tháng 9/2026): Tái cấu trúc hệ thống sang mô hình Hybrid kết hợp Astro 5 SSG (Zero-JS tĩnh cho Marketing & Blog, TTFB < 50ms, 100/100 Core Web Vitals) và React 18 SPA qua build script merge-dist.mjs tùy chỉnh trên Vercel Edge.",
+          "Agentic SEO & GEO Engine: Triển khai chiến lược tối ưu hóa đón đầu AI Search (ChatGPT Search, Perplexity, Claude): chuẩn hóa file llms.txt, cấu trúc nội dung Answer-First trong 150 từ đầu và tích hợp Triple Schema JSON-LD (SoftwareApplication, Restaurant, FAQ)."
+        ]
+      },
+      {
+        "company": "Tenomad",
+        "role": "Software Engineer",
+        "range": "Tháng 4 2025 - Tháng 8 2026",
+        "points": [
+          "Backend & Kiến Trúc Bất Đồng Bộ: Phát triển microservices bằng FastAPI và NestJS, điều phối hàng đợi thông điệp phân tán (Celery, Azure Service Bus) với worker pools và chiến lược exponential backoff retry tự phục hồi lỗi.",
+          "Tối Ưu Message Queue & Payload: Vượt qua giới hạn kích thước payload của cloud message queue bằng kỹ thuật truyền SAS URLs và reference IDs thay vì stream file trực tiếp, giảm tải độ trễ mạng và băng thông hệ thống.",
+          "Audio Signal Processing (Bảo Mật): Xây dựng pipeline kiểm định âm thanh đa định dạng (MP3, WAV, Librosa DSP) và streaming kết quả realtime, xử lý tương thích trình duyệt (Safari Web Audio) và cơ chế keep-alive connection khi tải cao.",
+          "Fullstack & CI/CD Delivery: Xây dựng dashboard người dùng bằng React và Tailwind CSS; thiết lập pipeline tự động hóa CI/CD bằng GitHub Actions cho linting, testing và zero-downtime deployment."
         ]
       },
       {
         "company": "Hue University of Science",
-        "role": "Sinh viên Khoa học Máy tính / Trợ giảng",
-        "range": "2022 - Hiện tại",
+        "role": "Cử nhân CNTT (Khoa học Máy tính) / Cựu Trợ giảng",
+        "range": "2022 - Tháng 7 2026 (Đã tốt nghiệp)",
         "points": [
-          "Từng tham gia training đội tuyển OLP/ICPC, rèn luyện tư duy thuật toán, phân rã bài toán và debug dưới áp lực thời gian.",
-          "Đạt giải \"Công trình xuất sắc\" trong báo cáo nghiên cứu khoa học cấp Khoa lần 1.",
-          "Trợ giảng cho các học phần lập trình cơ bản trong 4 học kỳ, hỗ trợ sinh viên xây dựng tư duy lập trình vững chắc."
+          "Tốt nghiệp Cử nhân Công nghệ Thông tin — Chuyên ngành Khoa học Máy tính (Tháng 7/2026).",
+          "Thuật Toán & Training ICPC/OLP: Rèn luyện cấu trúc dữ liệu nâng cao, tối ưu độ phức tạp không gian/thời gian và debug hệ thống dưới áp lực thời gian trong đội tuyển Olympic Tin học sinh viên.",
+          "Nghiên Cứu Khoa Học (Computer Vision & AI): Đạt giải \"Công trình xuất sắc\" cấp Khoa; xây dựng pipeline nhận diện và trích xuất giấy tờ tùy thân CCCD kết hợp YOLO object detection, VietOCR và Flask app.",
+          "Trợ Giảng (Teaching Assistant): Đảm nhiệm trợ giảng 4 học kỳ cho các học phần lập trình cơ sở (C/C++, Lập trình hướng đối tượng), hướng dẫn sinh viên về tư duy thiết kế giải thuật và kỹ thuật gỡ lỗi code."
         ]
       }
     ]
@@ -61,7 +75,45 @@
     "featured_label": "Case Study Nổi Bật",
     "featured": [
       {
-        "name": "Xử Lý Âm Thanh & Dịch Vụ API (Bảo Mật)",
+        "name": "SignMenu — Nền Tảng QR Menu & Agentic SEO (Live)",
+        "tech": ["Astro 5", "React 18", "TypeScript", "Firebase", "Agentic SEO (GEO)", "VietQR"],
+        "visual_steps": ["Astro SSG", "React SPA", "VietQR Engine", "Telegram Bot", "GEO / llms.txt"],
+        "visual_details": [
+          "Tầng Marketing & Blog Astro SSG dựng sẵn tĩnh 100%, đạt 100/100 Core Web Vitals, 0đ chi phí server.",
+          "Tầng React 18 SPA quản lý gọi món tại bàn, menu CMS và realtime order state.",
+          "Sinh mã VietQR động trực tiếp tại bàn, thanh toán 0% phí trung gian, 0 cần máy POS.",
+          "Bắn webhook thông báo đơn món kèm chuông báo âm thanh tức thì về Telegram Bot.",
+          "Đón đầu AI Search với file llms.txt, Schema JSON-LD đa tầng và cấu trúc Answer-First."
+        ],
+        "metrics": ["100/100 Web Vitals", "0đ Chi Phí Server", "Agentic GEO Ready"],
+        "desc": [
+          "Thiết kế kiến trúc Hybrid Monorepo 2 tầng: Astro 5 SSG cho Marketing/Blog (Zero client JS, TTFB < 50ms) và React 18 SPA cho ứng dụng gọi món realtime.",
+          "Xây dựng script merge-dist tùy chỉnh kết hợp 2 build outputs độc lập lên một tên miền duy nhất trên Vercel CDN Edge Network.",
+          "Triển khai chiến lược Triple-Threat SEO đón đầu AI Search (ChatGPT Search, Perplexity, Claude): file llms.txt, Answer-First trong 150 từ đầu và Triple Schema JSON-LD.",
+          "Tích hợp thanh toán VietQR động chuẩn EMVCo Napas 24/7 và hệ thống chuông báo thời gian thực qua Web Audio API & Telegram Bot."
+        ]
+      },
+      {
+        "name": "Hệ Thống Quản Lý Vận Hành Phòng Trọ V1",
+        "tech": ["Next.js 15", "TypeScript", "Prisma ORM", "PostgreSQL", "Tailwind CSS v4", "Radix UI"],
+        "visual_steps": ["Next.js 15 UI", "Senior-First UX", "State Machine (ADR-005)", "Prisma PostgreSQL", "Playwright E2E"],
+        "visual_details": [
+          "Giao diện Senior-First UX tối ưu thị lực cho người cao tuổi (70+), cấm vỡ dòng CTA, ImagePasteDropzone Ctrl+V từ Zalo.",
+          "Server Actions bảo mật kết hợp Zod schema guards và hàm đệ quy serializePrisma cho Decimal.",
+          "State machine ADR-005 với trạng thái ROLLED_INTO triệt tiêu 100% hiện tượng nợ ảo và tính trùng nợ.",
+          "PostgreSQL với Enterprise Soft Delete giải phóng unique key, bảo toàn 100% chứng từ kế toán.",
+          "Luồng liên thông tự động từ chốt chỉ số điện nước sang thẻ hoá đơn read-only in-place."
+        ],
+        "metrics": ["Zero-Debt Duplication", "Senior UX (70+)", "100% Accounting Integrity"],
+        "desc": [
+          "Thực hiện Brownfield Migration không gián đoạn, xây dựng mới toàn bộ phân hệ quản lý vận hành phòng trọ trên Next.js 15 App Router và Prisma ORM.",
+          "Giải quyết triệt để bài toán tính trùng công nợ (Double-Counting Debt) qua kiến trúc quyết định ADR-005 với trạng thái ROLLED_INTO và chuyển dịch trạng thái nguyên tử trong Database Transaction.",
+          "Kỹ thuật Senior-First UX Engineering phục vụ người dùng 70+ tuổi: cỡ chữ lớn, cấm emoji gây hiểu nhầm, component ImagePasteDropzone (Ctrl+V ảnh từ Zalo/Clipboard) và viewport adaptive modals.",
+          "Khắc phục lỗi serialization Decimal trên Next.js 15 Server Components qua hàm serializePrisma, đạt chuẩn 100% toàn vẹn dữ liệu kế toán."
+        ]
+      },
+      {
+        "name": "Xử Lý Âm Thanh & API Service (Bảo Mật)",
         "tech": ["Python", "FastAPI", "Audio DSP", "Docker", "Kiểm Định Client"],
         "visual_steps": ["Demo Người Dùng", "FastAPI Backend", "Kiểm Định Âm Thanh", "Pipeline DSP", "Trả Kết Quả"],
         "visual_details": [
@@ -77,44 +129,6 @@
           "Xây dựng backend APIs và viết tài liệu tích hợp cho phía client/mobile sử dụng.",
           "Debug các sự cố critical sau release: tương thích cross-browser (Safari/Chrome), kiểm định multi-format và ổn định vận hành.",
           "Thiết kế xử lý audio signal robust với chiến lược fallback và cơ chế keep-alive để đảm bảo vận hành ổn định tại thời điểm cao điểm."
-        ]
-      },
-      {
-        "name": "Xử Lý Tài Liệu & Real-Time Gateway (Bảo Mật)",
-        "tech": ["FastAPI", "NestJS", "Celery", "Azure Service Bus", "WebSockets"],
-        "visual_steps": ["Frontend Gửi", "API Queue", "Worker Pool", "Xử Lý", "Cập Nhật Realtime"],
-        "visual_details": [
-          "Xây dựng giao diện gửi tác vụ với quản lý trạng thái tiến trình.",
-          "Thiết kế kiểm định request và tạo job metadata cho xử lý nền.",
-          "Đưa work vào queue để xử lý bất đồng bộ giữ API responsive.",
-          "Quản lý thực thi tác vụ phân tán với monitoring sức khỏe và phục hồi.",
-          "Gửi tiến trình xử lý về client qua realtime channel."
-        ],
-        "metrics": ["Khả năng phục hồi Async", "Cập nhật realtime", "Tối ưu Queue"],
-        "desc": [
-          "Kiến trúc pipeline xử lý tài liệu bất đồng bộ với worker nền để tránh API bị block trên tác vụ chạy lâu.",
-          "Tối ưu cloud messaging bằng cách vượt qua giới hạn payload: gửi reference ID và SAS URL thay vì stream file toàn bộ, giảm network overhead.",
-          "Triển khai phục hồi worker chủ động qua health check định kỳ và auto requeue tác vụ, tăng độ tin cậy hệ thống và giảm sự cố task stuck.",
-          "Xây dựng real-time progress gateway dùng WebSocket, cho phép client theo dõi tiến trình xử lý và cải thiện responsiveness hệ thống."
-        ]
-      },
-      {
-        "name": "Nền Tảng QR Menu Generator (Production)",
-        "tech": ["React", "Tailwind CSS", "FastAPI", "Firebase", "Telegram Bot", "GitHub Actions"],
-        "visual_steps": ["React UI", "Admin Panel", "Payment Integration", "Bot Notifications", "Live Deploy"],
-        "visual_details": [
-          "Xây dựng giao diện menu số responsive với các luồng đặt hàng chính.",
-          "Dựng dashboard quản trị merchant cho quản lý nội dung, giá cả và cấu hình menu.",
-          "Tích hợp xử lý thanh toán VietQR cho vòng đời đơn hàng hoàn chỉnh.",
-          "Kết nối Telegram Bot API cho thông báo đơn hàng realtime và xác nhận nhân viên.",
-          "Thiết lập CI/CD pipeline với test tự động và deployment."
-        ],
-        "metrics": ["2 pilot live", "Giảm 90% chi phí", "Thông báo interactive"],
-        "desc": [
-          "Phát triển và triển khai nền tảng tự gọi món thương mại từ con số 0; hiện đang vận hành tại 2 quán cafe pilot với 1 quán live trên 1 tháng.",
-          "Triển khai tích hợp Telegram Bot 2 chiều, cho phép nhân viên nhận và xác nhận/hủy đơn trực tiếp qua chat mà không cần web dashboard.",
-          "Giảm chi phí Firestore 90% qua client-side caching (IndexedDB) và tối ưu query cho khách hàng lặp lại.",
-          "Thiết lập CI/CD end-to-end với GitHub Actions cho linting, testing và deploy tự động với zero-downtime update."
         ]
       }
     ],
@@ -144,7 +158,19 @@
     "title": "Liên Hệ",
     "description": "Tôi đang mở với các cơ hội giao nhau giữa backend engineering, tích hợp AI và tư duy phát triển sản phẩm. Nếu điều đó phù hợp, hãy cùng trao đổi.",
     "cta": "Gửi lời chào",
-    "resume_cta": "Xem CV"
+    "resume_cta": "Xem CV",
+    "copy_email": "Sao chép",
+    "copied": "Đã sao chép!",
+    "email_tooltip": "Nhấp để sao chép địa chỉ email"
+  },
+  "github": {
+    "title": "Hoạt Động Mã Nguồn Mở",
+    "recent": "22 tuần gần đây",
+    "commits": "commits",
+    "less": "Ít hơn",
+    "more": "Nhiều hơn",
+    "loading": "Đang tải dữ liệu đóng góp GitHub...",
+    "tooltip": "{{count}} đóng góp vào ngày {{date}}"
   },
   "footer": {
     "built_by": "Thiết kế & Xây dựng bởi Đào Quang Thuận",

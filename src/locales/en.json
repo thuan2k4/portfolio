@@ -12,46 +12,60 @@
     "para2": "I am strongest when working on systems that need clear boundaries, resilient asynchronous processing, and smart trade-off decisions. I believe great software isn't just about running correctly; it must be observable, scalable, and highly optimized for operational resources.",
     "skills_intro": "Here are a few technologies and practices I have been working with recently:",
     "skills": [
-      "FastAPI / NestJS",
-      "Python / TypeScript",
-      "Celery / Azure Service Bus",
-      "PostgreSQL / Firebase / Redis",
-      "Docker / CI-CD (GitHub Actions)",
-      "React / Tailwind CSS",
-      "Audio DSP (FFmpeg/Librosa)",
-      "System Optimization (Caching/IndexedDB)"
+      "Next.js 15 / React 18 / Astro 5",
+      "FastAPI / NestJS / Python / TypeScript",
+      "PostgreSQL (Prisma) / Redis / Firebase",
+      "Celery / Azure Service Bus (Async Queues)",
+      "Agentic SEO & GEO (Schema JSON-LD / llms.txt)",
+      "Senior-Centric UX & Accessibility (Radix UI)",
+      "Docker / CI-CD / Serverless Edge Deploy",
+      "System Optimization (IndexedDB / State Machines)"
     ]
   },
   "experience": {
     "jobs": [
       {
-        "company": "Tenomad",
-        "role": "Software Engineer",
-        "range": "April 2025 - Present",
+        "company": "TAT Team",
+        "role": "Fullstack & Product Engineer",
+        "range": "July 2026 - Present",
         "points": [
-          "Led full-stack development across multiple production systems: backend APIs (FastAPI, NestJS), real-time workflows, and consumer-facing interfaces (React, Tailwind CSS).",
-          "Designed and implemented asynchronous processing systems with reliable message queuing, worker pools, and exponential backoff for fault recovery.",
-          "Specialized in cost optimization: reduced Firestore operational costs by 90% through intelligent client-side caching (IndexedDB), and optimized cloud message queue handling to bypass provider payload limitations."
+          "Frontend & Senior-First UX: Built the interface using Next.js 15 (App Router, Turbopack), Tailwind CSS v4, and Radix UI; standardized UX for elderly users (70+): prevented CTA line-wrapping (whitespace-nowrap), developed ImagePasteDropzone component (supporting direct Ctrl+V invoice screenshot pasting from Zalo/Clipboard), and implemented adaptive dynamic viewport modals (max-h-[90dvh]).",
+          "Backend & Data Layer: Architected Next.js Server Actions, Prisma ORM, and Supabase PostgreSQL; developed a recursive serializePrisma utility to eliminate runtime serialization crashes when passing Prisma Decimal instances to Client Components.",
+          "Accounting State Machine (ADR-005): Designed a debt lifecycle state machine introducing the ROLLED_INTO status executed within atomic prisma.$transaction operations, eliminating 100% of double-counting debt bugs when carrying unpaid balances into new billing periods.",
+          "Enterprise Soft Delete & Testing: Implemented soft delete with unique constraint suffixing (roomNumber_del_timestamp) to release unique key constraints while guaranteeing 100% accounting audit trail preservation; created automated Playwright E2E test suites covering utility meter logging and invoice generation flows."
         ]
       },
       {
-        "company": "Freelance / QR Menu Maker",
-        "role": "Solo Fullstack Developer",
-        "range": "April 2025 - Present",
+        "company": "SignMenu (Personal)",
+        "role": "Founder & Solo Fullstack Engineer",
+        "range": "April 2026 - Present",
         "points": [
-          "Built and deployed a commercial self-ordering platform for restaurants from zero to production, currently serving 2 pilot coffee shops with 1 live for over a month.",
-          "Established end-to-end CI/CD pipeline using GitHub Actions for automated linting, testing, and deployment; integrated Telegram Bot API for real-time order notifications.",
-          "Implemented secure payment integration (VietQR), multi-language support, and merchant admin dashboard for menu/pricing management."
+          "MVP Core (April 2026): Architected and launched a digital table-ordering MVP within 1 month using React 18 SPA, Firebase Firestore, dynamic 24/7 EMVCo Napas VietQR generation (0% intermediary fees, no POS hardware needed), Web Audio API chimes, and instant Telegram Bot order webhooks.",
+          "Cost Optimization & Client Cache: Implemented a client-side caching architecture via IndexedDB, reducing Firestore read operations by 90% for returning guests and maintaining a $0/month operational footprint throughout testing.",
+          "Hybrid Monorepo Upgrade (From September 2026): Restructured the codebase into a Hybrid Monorepo fusing Astro 5 SSG (Zero-JS static marketing/blog, TTFB < 50ms, 100/100 Core Web Vitals) and React 18 SPA through a custom merge-dist.mjs script deployed to Vercel CDN Edge.",
+          "Agentic SEO & GEO Engine: Implemented Generative Engine Optimization for AI Search (ChatGPT Search, Perplexity, Claude): standardized llms.txt, structured Answer-First content within 150 words, and integrated Triple Schema JSON-LD (SoftwareApplication, Restaurant, FAQ)."
+        ]
+      },
+      {
+        "company": "Tenomad",
+        "role": "Software Engineer",
+        "range": "April 2025 - August 2026",
+        "points": [
+          "Backend & Asynchronous Architecture: Developed microservices with FastAPI and NestJS, orchestrating distributed message queues (Celery, Azure Service Bus) with worker pools and exponential backoff retry policies for automated fault recovery.",
+          "Message Queue & Payload Optimization: Overcame cloud message broker payload size constraints by transmitting temporary SAS URLs and reference IDs instead of streaming raw files, minimizing network latency and system bandwidth overhead.",
+          "Audio Signal Processing (Confidential): Built a multi-format audio validation pipeline (MP3, WAV, Librosa DSP) with real-time result streaming, resolving cross-browser compatibility (Safari Web Audio) and keep-alive handling under heavy load.",
+          "Fullstack & CI/CD Delivery: Developed management dashboards and client-facing interfaces with React and Tailwind CSS; configured CI/CD automation via GitHub Actions for linting, testing, and zero-downtime deployment."
         ]
       },
       {
         "company": "Hue University of Science",
-        "role": "Computer Science Student / Teaching Assistant",
-        "range": "2022 - Present",
+        "role": "B.S. in IT (Computer Science) / Former Teaching Assistant",
+        "range": "2022 - July 2026 (Graduated)",
         "points": [
-          "Trained with the OLP/ICPC programming team, strengthening algorithmic thinking, problem decomposition, and debugging under time pressure.",
-          "Received the 'Excellent Research Project' recognition in the faculty-level student research competition.",
-          "Served as a teaching assistant for fundamental programming courses for four semesters, helping students build strong logical foundations."
+          "Graduated with a Bachelor of Science in Information Technology, specializing in Computer Science (July 2026).",
+          "Algorithms & ICPC/OLP Training: Practiced advanced data structures, algorithmic complexity optimization, and rapid debugging under strict competition constraints in the university Olympic programming team.",
+          "Scientific Research (Computer Vision & AI): Awarded 'Excellent Research Project' at the faculty student scientific conference; developed an automated identity card extraction pipeline (YOLO object detection + VietOCR + Flask).",
+          "Teaching Assistant: Served as a Teaching Assistant for 4 semesters in foundational programming courses (C/C++, OOP), coaching students on algorithmic design patterns and rigorous debugging practices."
         ]
       }
     ]
@@ -60,6 +74,44 @@
     "title": "Selected Work",
     "featured_label": "Featured Case Study",
     "featured": [
+      {
+        "name": "SignMenu — Hybrid QR Menu & Agentic SEO Platform (Live)",
+        "tech": ["Astro 5", "React 18", "TypeScript", "Firebase", "Agentic SEO (GEO)", "VietQR"],
+        "visual_steps": ["Astro SSG", "React SPA", "VietQR Engine", "Telegram Bot", "GEO / llms.txt"],
+        "visual_details": [
+          "Marketing & Blog layer built with 100% static Astro SSG, scoring 100/100 Core Web Vitals at $0 infrastructure cost.",
+          "React 18 SPA layer powering table-side ordering, menu CMS, and real-time order state management.",
+          "Dynamic VietQR generated directly per table/bill, ensuring 0% intermediary transaction fees without POS hardware.",
+          "Real-time audio alerts and instant order notification dispatch via Telegram Bot webhooks.",
+          "Future-proof AI Search optimization with llms.txt, multi-tier Schema JSON-LD, and Answer-First structure."
+        ],
+        "metrics": ["100/100 Web Vitals", "$0 Infra Cost", "Agentic GEO Ready"],
+        "desc": [
+          "Designed a 2-tier Hybrid Monorepo architecture: Astro 5 SSG for Marketing/Blog (Zero client JS, TTFB < 50ms) and React 18 SPA for the interactive ordering app.",
+          "Created a custom merge-dist build script to seamlessly fuse two distinct framework build outputs into a single apex domain on Vercel CDN Edge Network.",
+          "Implemented a Triple-Threat SEO strategy targeting AI Search engines (ChatGPT Search, Perplexity, Claude): llms.txt standard, Answer-First within 150 words, and Triple Schema JSON-LD.",
+          "Integrated dynamic 24/7 EMVCo Napas VietQR payment flows with instant Web Audio API chimes and Telegram Bot webhooks for kitchen notifications."
+        ]
+      },
+      {
+        "name": "Rental Property Management Platform V1",
+        "tech": ["Next.js 15", "TypeScript", "Prisma ORM", "PostgreSQL", "Tailwind CSS v4", "Radix UI"],
+        "visual_steps": ["Next.js 15 UI", "Senior-First UX", "State Machine (ADR-005)", "Prisma PostgreSQL", "Playwright E2E"],
+        "visual_details": [
+          "Senior-First UX interface tailored for 70+ year-old operators with no line-breaking CTAs and ImagePasteDropzone (Ctrl+V from Zalo).",
+          "Secure Server Actions protected with Zod schema guards and recursive serializePrisma for Prisma Decimal objects.",
+          "ADR-005 state machine introducing ROLLED_INTO status to completely eliminate phantom debts and duplicate charges.",
+          "PostgreSQL with Enterprise Soft Delete releasing unique key constraints while guaranteeing 100% accounting record preservation.",
+          "Automated transition flow linking utility reading locks directly into in-place read-only invoice cards."
+        ],
+        "metrics": ["Zero-Debt Duplication", "Senior UX (70+)", "100% Accounting Integrity"],
+        "desc": [
+          "Executed a seamless brownfield migration, building the complete rental operations platform from the ground up on Next.js 15 App Router and Prisma ORM.",
+          "Eradicated double-counting debt anomalies via architectural decision ADR-005 utilizing ROLLED_INTO state within atomic database transactions.",
+          "Engineered Senior-First UX specifically for elderly landlords (70+): enlarged typography, no ambiguous emojis, ImagePasteDropzone for instant Zalo clipboard paste, and viewport-adaptive modal dialogs.",
+          "Resolved Next.js 15 Server-to-Client Component Decimal serialization crashes via a recursive serializePrisma utility, ensuring 100% accounting data reliability."
+        ]
+      },
       {
         "name": "Audio Processing & API Service (Confidential)",
         "tech": ["Python", "FastAPI", "Audio DSP", "Docker", "Client Validation"],
@@ -77,44 +129,6 @@
           "Built backend APIs and documented integration contracts for mobile client adoption.",
           "Diagnosed and resolved critical launch-phase issues: cross-browser compatibility (Safari/Chrome), multi-format validation, and production stability.",
           "Engineered robust audio processing with fallback strategies and keep-alive mechanisms to ensure reliable operation during peak usage."
-        ]
-      },
-      {
-        "name": "Document Processing & Real-Time Gateway (Confidential)",
-        "tech": ["FastAPI", "NestJS", "Celery", "Azure Service Bus", "WebSockets"],
-        "visual_steps": ["Frontend Submit", "API Queue", "Worker Pool", "Processing", "Realtime Update"],
-        "visual_details": [
-          "Built task submission interface with progress state management.",
-          "Designed request validation and job metadata creation for background processing.",
-          "Queued work for asynchronous processing to keep main API responsive.",
-          "Managed distributed task execution with health monitoring and recovery.",
-          "Streamed processing status back to clients through real-time channels."
-        ],
-        "metrics": ["Async resilience", "Real-time updates", "Queue optimization"],
-        "desc": [
-          "Architected an asynchronous document processing pipeline with background workers to prevent API blocking on long-running tasks.",
-          "Optimized cloud messaging by bypassing payload limits: passed reference IDs and SAS URLs instead of full file streams, reducing network overhead.",
-          "Implemented proactive worker recovery with periodic health checks and automatic task requeue, improving system reliability and reducing stuck-task incidents.",
-          "Built a real-time progress gateway using WebSockets, allowing clients to follow processing status and improving overall system responsiveness."
-        ]
-      },
-      {
-        "name": "QR Menu Generator Platform (Production)",
-        "tech": ["React", "Tailwind CSS", "FastAPI", "Firebase", "Telegram Bot", "GitHub Actions"],
-        "visual_steps": ["React UI", "Admin Panel", "Payment Integration", "Bot Notifications", "Live Deploy"],
-        "visual_details": [
-          "Implemented responsive digital menu interface with core ordering flows.",
-          "Built merchant admin dashboard for content management, pricing, and menu configuration.",
-          "Integrated VietQR payment processing for the complete order lifecycle.",
-          "Connected Telegram Bot API for real-time order notifications and staff confirmations.",
-          "Established CI/CD pipeline with automated testing and deployment."
-        ],
-        "metrics": ["2 live pilots", "90% cost reduction", "Interactive notifications"],
-        "desc": [
-          "Developed and deployed a commercial self-ordering platform from scratch; currently live at 2 pilot coffee shops with 1 operating for over a month in production.",
-          "Implemented bi-directional Telegram Bot integration, enabling staff to receive and confirm/cancel orders directly from chat without a web dashboard.",
-          "Reduced Firestore operational costs by 90% through intelligent client-side caching (IndexedDB) and query optimization for repeat customers.",
-          "Established end-to-end CI/CD using GitHub Actions for linting, testing, and automated deployment with zero-downtime updates."
         ]
       }
     ],
@@ -144,7 +158,19 @@
     "title": "Get In Touch",
     "description": "I am open to opportunities where backend engineering, AI integration, and product-minded software development meet. If that sounds useful, let's talk.",
     "cta": "Say Hello",
-    "resume_cta": "View CV"
+    "resume_cta": "View CV",
+    "copy_email": "Copy",
+    "copied": "Copied!",
+    "email_tooltip": "Click to copy email address"
+  },
+  "github": {
+    "title": "Open Source Activity",
+    "recent": "Recent 22 weeks",
+    "commits": "commits",
+    "less": "Ít hơn",
+    "more": "Nhiều hơn",
+    "loading": "Đang tải dữ liệu đóng góp GitHub...",
+    "tooltip": "{{count}} đóng góp vào ngày {{date}}"
   },
   "footer": {
     "built_by": "Designed & Built by Dao Quang Thuan",

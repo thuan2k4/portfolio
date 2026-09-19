@@ -40,16 +40,20 @@
 
 @layer components {
   .section-heading {
-    @apply flex items-center mb-10 w-full whitespace-nowrap text-xl sm:text-2xl md:text-3xl text-slate-lightest font-semibold;
+    @apply flex items-center mb-10 w-full text-xl sm:text-2xl md:text-3xl text-slate-lightest font-semibold;
   }
   
+  .section-heading span {
+    @apply font-mono text-green text-lg sm:text-xl md:text-2xl font-normal mr-2.5 shrink-0;
+  }
+
   .section-heading::after {
     content: "";
-    @apply block relative top-0.5 w-full md:w-72 h-[1px] ml-4 md:ml-5 bg-navy-lightest;
+    @apply block relative top-0.5 flex-1 max-w-[280px] h-[1px] ml-4 md:ml-5 bg-navy-lightest;
   }
 
   .nav-link {
-    @apply font-mono text-sm tracking-widest text-slate-lightest hover:text-green py-2 px-3;
+    @apply font-mono text-sm tracking-widest text-slate-lightest hover:text-green py-2 px-3 whitespace-nowrap;
   }
 
   .nav-link span {
@@ -57,7 +61,7 @@
   }
 
   .btn {
-    @apply border border-green text-green py-3 px-7 rounded font-mono text-sm tracking-widest hover:bg-green-tint transition-all;
+    @apply border border-green text-green py-3 px-7 rounded font-mono text-sm tracking-widest hover:bg-green-tint transition-all whitespace-nowrap;
   }
 }
 

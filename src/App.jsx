@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { Github, Linkedin, Facebook, Instagram, Globe, ChevronRight, Briefcase, GraduationCap } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Github, Linkedin, Facebook, Instagram, Globe, ChevronRight, Briefcase, GraduationCap, Menu, X, Copy, Check, Mail } from 'lucide-react';
 import Hero from './components/Hero';
 import FeaturedProjects from './components/FeaturedProjects';
+import GithubActivity from './components/GithubActivity';
 import CONFIG from './config';
 
 const sectionReveal = {
@@ -30,6 +31,7 @@ const Header = ({ currentLang, toggleLang }) => {
   const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,18 +49,31 @@ const Header = ({ currentLang, toggleLang }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   const navItems = ['about', 'experience', 'work', 'contact'];
 
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: visible ? 0 : -100 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 md:px-12 py-4 ${
-        scrolled ? 'bg-navy-dark/90 backdrop-blur-md shadow-lg h-16' : 'bg-transparent h-24'
+      className={`fixed top-0 w-full z-50 transition-all duration-300 px-5 sm:px-8 md:px-12 py-4 ${
+        scrolled ? 'bg-navy-dark/90 backdrop-blur-md shadow-lg h-16' : 'bg-transparent h-20 md:h-24'
       }`}
     >
       <nav className="flex justify-between items-center h-full max-w-7xl mx-auto">
-        <motion.div 
+        <motion.a 
+          href="#hero"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           whileHover={{ scale: 1.08, rotate: -3 }}
@@ -66,9 +81,10 @@ const Header = ({ currentLang, toggleLang }) => {
           className="text-green font-mono text-xl font-bold cursor-pointer"
         >
           T.
-        </motion.div>
+        </motion.a>
         
-        <div className="hidden md:flex items-center space-x-4">
+        {/* Desktop Navigation: visible on lg (>=1024px) */}
+        <div className="hidden lg:flex items-center space-x-4">
           <ul className="flex items-center space-x-2">
             {navItems.map((item, i) => (
               <motion.li
@@ -94,14 +110,110 @@ const Header = ({ currentLang, toggleLang }) => {
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.96 }}
               onClick={toggleLang}
-              className="font-mono text-xs text-green border border-green px-2 py-1 rounded hover:bg-green-tint transition-all"
+              className="font-mono text-xs text-green border border-green px-2.5 py-1.5 rounded hover:bg-green-tint transition-all"
+              aria-label="Toggle language"
             >
               {currentLang.toUpperCase()}
             </motion.button>
             <motion.a whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }} href={CONFIG.resumeUrl} target="_blank" rel="noreferrer" className="btn py-2 px-4">{t('nav.resume')}</motion.a>
           </motion.div>
         </div>
+
+        {/* Mobile / Tablet Menu Button: visible on < lg */}
+        <div className="flex items-center gap-3 lg:hidden">
+          <button 
+            onClick={toggleLang}
+            className="font-mono text-xs text-green border border-green px-2 py-1 rounded hover:bg-green-tint transition-all"
+            aria-label="Toggle language"
+          >
+            {currentLang.toUpperCase()}
+          </button>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 text-green hover:bg-green-tint rounded transition-all focus:outline-none focus:ring-2 focus:ring-green/50"
+            aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
+          >
+            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
       </nav>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 z-40 bg-navy-dark/80 backdrop-blur-sm lg:hidden"
+            />
+            {/* Drawer */}
+            <motion.aside
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 26, stiffness: 220 }}
+              className="fixed top-0 right-0 bottom-0 w-[min(80vw,340px)] z-50 bg-navy-light/95 backdrop-blur-md shadow-2xl border-l border-green/20 flex flex-col justify-between px-8 py-10 lg:hidden"
+            >
+              <div className="flex justify-end">
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-2 text-green hover:bg-green-tint rounded transition-all"
+                  aria-label="Close menu"
+                >
+                  <X size={26} />
+                </button>
+              </div>
+
+              <nav className="flex flex-col items-center justify-center space-y-6 text-center">
+                <ul className="flex flex-col items-center space-y-5 w-full">
+                  {navItems.map((item, i) => (
+                    <motion.li
+                      key={item}
+                      initial={{ opacity: 0, y: 14 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.08 * i }}
+                      className="w-full"
+                    >
+                      <a
+                        href={`#${item}`}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block font-mono text-base tracking-wider text-slate-lightest hover:text-green py-2 transition-all"
+                      >
+                        <span className="text-green text-xs block mb-1">0{i + 1}.</span>
+                        {t(`nav.${item}`)}
+                      </a>
+                    </motion.li>
+                  ))}
+                </ul>
+
+                <div className="pt-4 flex flex-col items-center gap-4 w-full">
+                  <a
+                    href={CONFIG.resumeUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="btn py-3 px-8 text-xs w-full text-center"
+                  >
+                    {t('nav.resume')}
+                  </a>
+                </div>
+              </nav>
+
+              <div className="flex justify-center items-center gap-5 text-slate-light">
+                <a href={CONFIG.socials.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-green"><Github size={18} /></a>
+                <a href={CONFIG.socials.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-green"><Linkedin size={18} /></a>
+                <a href={CONFIG.socials.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-green"><Instagram size={18} /></a>
+                <a href={CONFIG.socials.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="hover:text-green"><Facebook size={18} /></a>
+              </div>
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 };
@@ -147,13 +259,13 @@ const About = () => {
       variants={sectionReveal}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: '-120px' }}
+      viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.55, ease: 'easeOut' }}
     >
       <div className="section-heading">
-        <span>01.</span> {t('about.title')}
+        <span>01.</span>{' '}{t('about.title')}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 items-center md:items-start">
         <div className="md:col-span-2 space-y-4 text-base md:text-lg leading-8">
           <p>{t('about.para1')}</p>
           <p>{t('about.para2')}</p>
@@ -178,8 +290,8 @@ const About = () => {
             ))}
           </motion.ul>
         </div>
-        <div className="relative group max-w-[300px] mx-auto md:mx-0">
-          <div className="relative z-10 border-2 border-green rounded translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-300">
+        <div className="relative group max-w-[260px] sm:max-w-[280px] md:max-w-[300px] mx-auto md:mx-0 w-full">
+          <div className="relative z-10 border-2 border-green rounded md:translate-x-4 md:translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-300">
             <div className="aspect-square bg-green rounded overflow-hidden">
                {CONFIG.avatarUrl ? (
                  <img src={CONFIG.avatarUrl} alt="Avatar" className="w-full h-full object-cover transition-all" />
@@ -192,6 +304,8 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <GithubActivity />
     </motion.section>
   );
 };
@@ -201,7 +315,7 @@ const Experience = () => {
   const jobs = t('experience.jobs', { returnObjects: true });
   const [activeTab, setActiveTab] = useState(0);
   const activeJob = jobs[activeTab];
-  const ActiveIcon = activeTab === 0 ? Briefcase : GraduationCap;
+  const ActiveIcon = activeTab === jobs.length - 1 ? GraduationCap : Briefcase;
 
   return (
     <motion.section
@@ -210,19 +324,19 @@ const Experience = () => {
       variants={sectionReveal}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: '-120px' }}
+      viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.55, ease: 'easeOut' }}
     >
       <div className="section-heading">
-        <span>02.</span> {t('nav.experience')}
+        <span>02.</span>{' '}{t('nav.experience')}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-[210px_1fr] lg:grid-cols-[220px_1fr] gap-6 mt-8">
-        <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-x-visible border-b md:border-b-0 md:border-l border-navy-lightest pb-3 md:pb-0 md:pl-3">
+        <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-x-visible border-b md:border-b-0 md:border-l border-navy-lightest pb-3 md:pb-0 md:pl-3 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {jobs.map((job, i) => (
             <button
               key={i}
               onClick={() => setActiveTab(i)}
-              className={`px-4 py-3 text-xs font-mono text-left whitespace-nowrap rounded border transition-all min-w-[170px] md:w-full ${
+              className={`px-4 py-3 text-xs font-mono text-left whitespace-nowrap rounded border transition-all min-w-[170px] md:min-w-0 md:w-full ${
                 i === activeTab
                   ? 'text-green border-green bg-green-tint shadow-lg shadow-green/5'
                   : 'text-slate border-transparent hover:border-navy-lightest hover:bg-navy-light/70 hover:text-slate-lightest'
@@ -239,7 +353,7 @@ const Experience = () => {
           transition={{ duration: 0.25 }}
           className="relative overflow-hidden rounded border border-navy-lightest/70 bg-navy-light/60 p-6 md:p-8 shadow-2xl shadow-black/10"
         >
-          <div className="absolute right-6 top-6 text-green/10">
+          <div className="absolute right-6 top-6 text-green/10 pointer-events-none">
             <ActiveIcon size={76} strokeWidth={1.2} />
           </div>
           <div className="relative">
@@ -276,7 +390,7 @@ const NoteworthyProjects = () => {
       variants={sectionReveal}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: '-120px' }}
+      viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.55, ease: 'easeOut' }}
     >
       <h2 className="text-2xl md:text-3xl font-bold mb-12 leading-tight">{t('projects.noteworthy.title')}</h2>
@@ -285,13 +399,13 @@ const NoteworthyProjects = () => {
         variants={staggerChildren}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: '-80px' }}
+        viewport={{ once: true, margin: '-40px' }}
       >
         {projects.map((project, i) => (
           <motion.div
             key={i}
             variants={itemReveal}
-            whileHover={{ y: -10 }}
+            whileHover={{ y: -8 }}
             className="bg-navy-light/80 border border-navy-lightest/50 p-6 md:p-7 rounded shadow-lg flex flex-col justify-between group hover:border-green/50 hover:shadow-2xl hover:shadow-green/5 transition-all"
           >
             <div>
@@ -304,6 +418,7 @@ const NoteworthyProjects = () => {
                        href={CONFIG.projectLinks.noteworthy[i].github}
                        target="_blank"
                        rel="noreferrer"
+                       aria-label="GitHub Repository"
                        className="hover:text-green cursor-pointer"
                      >
                        <Github size={20} />
@@ -330,9 +445,78 @@ const Footer = () => {
   const { t } = useTranslation();
   return (
     <footer className="py-10 text-center font-mono text-xs">
+      {/* Mobile/Tablet social links */}
+      <div className="flex lg:hidden justify-center items-center gap-6 mb-6 text-slate-light">
+        <a href={CONFIG.socials.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-green hover:-translate-y-1 transition-all"><Github size={22} /></a>
+        <a href={CONFIG.socials.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:text-green hover:-translate-y-1 transition-all"><Linkedin size={22} /></a>
+        <a href={CONFIG.socials.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-green hover:-translate-y-1 transition-all"><Instagram size={22} /></a>
+        <a href={CONFIG.socials.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="hover:text-green hover:-translate-y-1 transition-all"><Facebook size={22} /></a>
+      </div>
       <p className="hover:text-green cursor-pointer transition-all">{t('footer.built_by')}</p>
       <p className="mt-2 text-slate-light">{t('footer.inspired_by')}</p>
     </footer>
+  );
+};
+
+const CopyEmailPill = ({ email }) => {
+  const { t } = useTranslation();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    setCopied(true);
+    setTimeout(() => setCopied(false), 3000);
+
+    try {
+      if (navigator?.clipboard?.writeText) {
+        await navigator.clipboard.writeText(email);
+        return;
+      }
+    } catch {
+      // Fallback if clipboard API throws or blocked
+    }
+
+    try {
+      const textArea = document.createElement('textarea');
+      textArea.value = email;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-9999px';
+      textArea.style.top = '-9999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+    } catch (err) {
+      console.error('Copy fallback failed:', err);
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      className="group relative inline-flex items-center gap-2.5 rounded-full border border-green/40 bg-navy-light/90 px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-mono text-slate-light shadow-lg hover:border-green hover:shadow-[0_0_20px_rgba(100,255,218,0.25)] hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
+      title={t('contact.email_tooltip', { defaultValue: 'Click to copy email address' })}
+    >
+      <Mail size={15} className="text-green shrink-0 pointer-events-none" />
+      <span className="text-slate-lightest font-medium select-none pointer-events-none">{email}</span>
+      <span className="h-3.5 w-[1px] bg-navy-lightest pointer-events-none" />
+      <span className="flex items-center gap-1.5 text-green text-xs pointer-events-none">
+        {copied ? (
+          <>
+            <Check size={14} className="text-green stroke-[2.5]" />
+            <span className="font-semibold text-[11px] sm:text-xs text-green">{t('contact.copied', { defaultValue: 'Copied!' })}</span>
+          </>
+        ) : (
+          <>
+            <Copy size={13} className="text-slate-light group-hover:text-green transition-colors" />
+            <span className="text-slate group-hover:text-green text-[11px] sm:text-xs transition-colors">
+              {t('contact.copy_email', { defaultValue: 'Copy' })}
+            </span>
+          </>
+        )}
+      </span>
+    </button>
   );
 };
 
@@ -366,12 +550,18 @@ function App() {
           variants={sectionReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-120px' }}
+          viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.55, ease: 'easeOut' }}
         >
           <p className="font-mono text-green mb-5">{t('contact.subheading')}</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 text-slate-lightest leading-tight">{t('contact.title')}</h2>
-          <p className="text-slate mb-12 text-base md:text-lg leading-8">{t('contact.description')}</p>
+          <p className="text-slate mb-8 text-base md:text-lg leading-8">{t('contact.description')}</p>
+          
+          {/* Interactive Copy Email Pill Badge */}
+          <div className="flex justify-center mb-10">
+            <CopyEmailPill email={CONFIG.email} />
+          </div>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.a whileHover={{ y: -3 }} whileTap={{ scale: 0.97 }} href={`mailto:${CONFIG.email}`} className="btn py-4 px-10 inline-block">{t('contact.cta')}</motion.a>
             {CONFIG.resumeUrl !== '#' && (
@@ -396,3 +586,4 @@ function App() {
 }
 
 export default App;
+
